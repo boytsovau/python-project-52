@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-bnv2-=4j(9-heu@138g1w_#dny4v5k0h+*tk_pf%$v5pw3$52n
 DEBUG = True
 
 ALLOWED_HOSTS = ['webserver',
-                 '127.0.0.1',
+                 '0.0.0.0',
                  ]
 
 
