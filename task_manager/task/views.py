@@ -4,4 +4,16 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse("Hello!")
+    return render(request, 'home.html')
+
+
+def login_view(request):
+    return render(request, 'login.html')
+
+
+def register_view(request):
+    return render(request, 'register.html')
+
+
+def users_view(request):
+    return render(request, 'users.html')

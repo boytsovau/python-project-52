@@ -1,0 +1,43 @@
+{% load i18n %}
+{% load django_bootstrap5 %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% trans "Главная" %}</title>
+  {% bootstrap_css %}
+  <style>
+    /* Ваши дополнительные стили могут быть добавлены здесь */
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Navbar</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <a class="nav-link" href="{% url 'login' %}">{% trans "Вход" %}</a>
+          <a class="nav-link" href="{% url 'register' %}">{% trans "Регистрация" %}</a>
+          <a class="nav-link" href="{% url 'users' %}">{% trans "Пользователи" %}</a>
+        </div>
+      </div>
+      <div class="navbar-collapse offcanvas-collapse">
+        <h1 class="display-3">{% trans "Hello" %}</h1>
+      </div>
+    </div>
+  </nav>
+</body>
+
+</html>

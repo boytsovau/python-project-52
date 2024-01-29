@@ -1,0 +1,26 @@
+{% load i18n %}
+{% load django_bootstrap5 %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% trans "Вход" %}</title>
+  {% bootstrap_css %}
+  <style>
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>{% trans "Вход" %}</h2>
+  </div>
+
+  {% bootstrap_javascript %}
+
+</body>
+
+</html>
