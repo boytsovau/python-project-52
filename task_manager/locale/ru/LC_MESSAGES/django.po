@@ -119,7 +119,7 @@ msgstr ""
 
 #: templates/base.html:9 templates/nav.html:4 views.py:13
 msgid "Task manager"
-msgstr ""
+msgstr "Менеджер задач"
 
 #: templates/index.html:7
 msgid "It's a study django project"
@@ -129,37 +129,37 @@ msgstr ""
 #: templates/tasks/detail.html:47 templates/tasks/list.html:31
 #: templates/users/list.html:20
 msgid "edit"
-msgstr ""
+msgstr "Редактировать"
 
 #: templates/mark/list.html:20 templates/status/list.html:20
 #: templates/tasks/detail.html:49 templates/tasks/list.html:33
 #: templates/users/list.html:21
 msgid "remove"
-msgstr ""
+msgstr "Удалить"
 
 #: templates/nav.html:11 users/views.py:17
 msgid "Users"
-msgstr ""
+msgstr "Пользватели"
 
 #: templates/nav.html:21
 msgid "Tasks"
-msgstr ""
+msgstr "Задачи"
 
 #: templates/nav.html:29
 msgid "Logout"
-msgstr ""
+msgstr "Выход"
 
 #: templates/nav.html:31 views.py:21
 msgid "Enter"
-msgstr ""
+msgstr "Вход"
 
 #: templates/nav.html:32 users/views.py:30
 msgid "Register"
-msgstr ""
+msgstr "Регистрация"
 
 #: templates/tasks/list.html:6
 msgid "Create task"
-msgstr ""
+msgstr "Создать Задачу"
 
 #: users/forms.py:11 users/forms.py:15
 msgid "First name"
