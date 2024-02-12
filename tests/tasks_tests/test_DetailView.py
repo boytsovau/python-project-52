@@ -4,11 +4,16 @@ from django.test import TransactionTestCase
 from task_manager.task.models import Task
 import os
 
-FIXTURE_PATH = f"{os.path.dirname(os.path.abspath(__file__))}/fixtures"
+FIXTURE_DIR = os.path.join(
+    os.path.dirname(os.path.realpath(__file__)),
+    '../fixtures'
+)
+
+FIXTURE_FILE = os.path.join(FIXTURE_DIR, 'db_task')
 
 
 class List(TransactionTestCase):
-    fixtures = [f"{FIXTURE_PATH}/db_task"]
+    fixtures = FIXTURE_FILE
 
     def test_list_without_login(self):
         response = self.client.get(reverse(
