@@ -11,7 +11,7 @@ from ..mixins import LoginRequiredCustomMixin, DeleteProtectErrorMixin
 class MarkCreateView(LoginRequiredCustomMixin, SuccessMessageMixin,
                      CreateView):
     form_class = MarkForm
-    template_name = "marks/create.html"
+    template_name = "mark/create.html"
     success_url = reverse_lazy('mark_list')
     extra_context = {
         'header': _('Create mark'),
@@ -23,7 +23,7 @@ class MarkCreateView(LoginRequiredCustomMixin, SuccessMessageMixin,
 
 class MarkListView(LoginRequiredCustomMixin, ListView):
     model = Mark
-    template_name = "marks/list.html"
+    template_name = "mark/list.html"
     extra_context = {
         'marks': _('Marks'),
         'ID': _('ID'),
@@ -37,7 +37,7 @@ class MarkUpdateView(LoginRequiredCustomMixin, SuccessMessageMixin,
                      UpdateView):
     model = Mark
     form_class = MarkForm
-    template_name = "marks/create.html"
+    template_name = "mark/create.html"
     success_url = reverse_lazy('mark_list')
     extra_context = {
         'header': _('Update mark'),
@@ -50,7 +50,7 @@ class MarkUpdateView(LoginRequiredCustomMixin, SuccessMessageMixin,
 class MarkDeleteView(LoginRequiredCustomMixin, DeleteProtectErrorMixin,
                      DeleteView):
     model = Mark
-    template_name = "marks/delete.html"
+    template_name = "mark/delete.html"
     success_url = reverse_lazy('mark_list')
     extra_context = {
         'header': _('Remove mark'),

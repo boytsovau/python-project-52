@@ -11,7 +11,7 @@ from django.utils.translation import gettext_lazy as _
 
 class StatusListView(LoginRequiredCustomMixin, ListView):
     model = Status
-    template_name = "statuses/list.html"
+    template_name = "status/list.html"
     extra_context = {
         'statuses': _('Statuses'),
         'ID': _('ID'),
@@ -24,7 +24,7 @@ class StatusListView(LoginRequiredCustomMixin, ListView):
 class StatusCreateView(LoginRequiredCustomMixin, SuccessMessageMixin,
                        CreateView):
     form_class = StatusForm
-    template_name = "statuses/create.html"
+    template_name = "status/create.html"
     success_url = reverse_lazy('status_list')
     extra_context = {
         'header': _('Create status'),
@@ -38,7 +38,7 @@ class StatusUpdateView(LoginRequiredCustomMixin, SuccessMessageMixin,
                        UpdateView):
     model = Status
     form_class = StatusForm
-    template_name = "statuses/create.html"
+    template_name = "status/create.html"
     success_url = reverse_lazy('status_list')
     extra_context = {
         'header': _('Update status'),
@@ -51,7 +51,7 @@ class StatusUpdateView(LoginRequiredCustomMixin, SuccessMessageMixin,
 class StatusDeleteView(LoginRequiredCustomMixin, DeleteProtectErrorMixin,
                        DeleteView):
     model = Status
-    template_name = "statuses/delete.html"
+    template_name = "status/delete.html"
     success_url = reverse_lazy('status_list')
     extra_context = {
         'header': _('Remove status'),
