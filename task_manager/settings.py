@@ -106,7 +106,7 @@ if ENVIRONMENT == "development":
     }
 else:
     DATABASES = {
-        'default': dj_database_url.parse(os.getenv('POSTGRES_URL'))
+        'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
     }
 
 
