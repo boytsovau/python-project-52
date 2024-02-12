@@ -15,7 +15,7 @@
     }
   },
   {
-    "model": "statuses.status",
+    "model": "status.status",
     "pk": 1,
     "fields": {
       "name": "open",
@@ -23,7 +23,7 @@
     }
   },
   {
-    "model": "tasks.task",
+    "model": "task.task",
     "pk": 1,
     "fields": {
       "name": "first task",

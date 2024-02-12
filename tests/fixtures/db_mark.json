@@ -16,7 +16,7 @@
     }
   },
   {
-     "model": "marks.mark",
+     "model": "mark.mark",
      "pk": 1,
      "fields": {
        "date_joined": "2022-12-05T08:41:56.579Z",

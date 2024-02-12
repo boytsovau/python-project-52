@@ -16,7 +16,7 @@
     }
   },
   {
-     "model": "statuses.status",
+     "model": "status.status",
      "pk": 1,
      "fields": {
        "date_joined": "2022-12-05T08:41:56.579Z",
