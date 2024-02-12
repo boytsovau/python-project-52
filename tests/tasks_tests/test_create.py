@@ -2,10 +2,16 @@ from task_manager.users.models import TaskUser as User
 from django.urls import reverse_lazy as reverse
 from django.test import TestCase
 from task_manager.task.models import Status, Task
+import os
+
+FIXTURE_DIR = os.path.join(
+    os.path.dirname(os.path.realpath(__file__)),
+    '../fixtures'
+)
 
 
 class Create(TestCase):
-    fixtures = ['db_task.json']
+    fixtures = [f"{FIXTURE_DIR}/db_task.json"]
 
     def test_create_open_without_login(self):
         response = self.client.get(reverse('task_add'))

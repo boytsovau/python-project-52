@@ -2,10 +2,16 @@ from task_manager.users.models import TaskUser as User
 from django.urls import reverse_lazy as reverse
 from django.test import TransactionTestCase
 from task_manager.mark.models import Mark
+import os
+
+FIXTURE_DIR = os.path.join(
+    os.path.dirname(os.path.realpath(__file__)),
+    '../fixtures'
+)
 
 
 class DeleteMarkWithTask(TransactionTestCase):
-    fixtures = ['db_mark_with_bond.json']
+    fixtures = [f"{FIXTURE_DIR}/db_mark_with_bond.json"]
 
     def test_delete_with_mark(self):
         mark = Mark.objects.all().first()

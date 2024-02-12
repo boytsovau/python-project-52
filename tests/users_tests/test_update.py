@@ -14,7 +14,7 @@ TEST_USER = json.load(open(FIXTURE_FILE))
 
 
 class Modify(TransactionTestCase):
-    fixtures = ['db.json']
+    fixtures = [f"{FIXTURE_DIR}/db.json"]
     username = TEST_USER.get('username')
 
     def test_modify_only_logged(self):

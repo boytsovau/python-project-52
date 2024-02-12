@@ -4,11 +4,14 @@ from django.test import TransactionTestCase
 from task_manager.task.models import Status, Task
 import os
 
-FIXTURE_PATH = f"{os.path.dirname(os.path.abspath(__file__))}/fixtures"
+FIXTURE_DIR = os.path.join(
+    os.path.dirname(os.path.realpath(__file__)),
+    '../fixtures'
+)
 
 
 class UpdateTask(TransactionTestCase):
-    fixtures = [f"{FIXTURE_PATH}"'db_task.json']
+    fixtures = [f"{FIXTURE_DIR}/db_task.json"]
 
     def test_update_open_without_login(self):
         response = self.client.get(reverse('task_update', kwargs={'pk': 1}))

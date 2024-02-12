@@ -3,10 +3,16 @@ from django.test import TransactionTestCase
 from task_manager.users.models import TaskUser as User
 from task_manager.status.models import Status
 from task_manager.task.models import Task
+import os
+
+FIXTURE_DIR = os.path.join(
+    os.path.dirname(os.path.realpath(__file__)),
+    '../fixtures'
+)
 
 
 class Delete(TransactionTestCase):
-    fixtures = ['db.json']
+    fixtures = [f"{FIXTURE_DIR}/db.json"]
 
     def test_delete_without_login(self):
         response = self.client.post(
