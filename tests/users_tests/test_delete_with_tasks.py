@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy as reverse
 from django.test import TransactionTestCase
 from task_manager.users.models import TaskUser as User
-from task_manager.tasks.models import Task
+from task_manager.task.models import Task
 
 
 class Remove(TransactionTestCase):
