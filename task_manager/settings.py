@@ -10,20 +10,26 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+import dj_database_url
+import rollbar
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-bnv2-=4j(9-heu@138g1w_#dny4v5k0h+*tk_pf%$v5pw3$52n'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG_ENV = os.getenv('DEBUG')
+DEBUG = DEBUG_ENV if DEBUG_ENV else True
 
 ALLOWED_HOSTS = ['*']
 
@@ -40,6 +46,9 @@ INSTALLED_APPS = [
     'task_manager',
     'task_manager.task',
     'django_bootstrap5',
+    'task_manager.mark',
+    'task_manager.users',
+    'task_manager.status',
 ]
 
 MIDDLEWARE = [
@@ -50,7 +59,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'rollbar.contrib.django.middleware.RollbarMiddleware',
+    'rollbar.contrib.django.middleware.RollbarNotifierMiddleware'
 ]
+
+ROLLBAR = {
+    'access_token': os.environ.get('ROLLBAR'),
+    'environment': 'development' if DEBUG else 'production',
+    'code_version': '1.0',
+    'root': BASE_DIR,
+}
 
 ROOT_URLCONF = 'task_manager.urls'
 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    {% load i18n %}
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery=True %}
+    {% bootstrap_jquery %}
+    <title>{% translate "Task manager" %}</title>
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+{% include "nav.html" %}
+<main role="main" class="container">
+    <div class="mt-5 p-5 bg-white rounded shadow-sm">
+        {% bootstrap_messages %}
+        {% block page_content %}
+        {% endblock %}
+    </div>
+</main>
+</body>
+</html>
+
