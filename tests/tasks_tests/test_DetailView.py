@@ -11,7 +11,7 @@ FIXTURE_DIR = os.path.join(
 
 
 class List(TransactionTestCase):
-    fixtures = [f"{FIXTURE_DIR}/db_task"]
+    fixtures = [f"{FIXTURE_DIR}/db_task.json"]
 
     def test_list_without_login(self):
         response = self.client.get(reverse(
