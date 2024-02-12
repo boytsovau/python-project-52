@@ -8,7 +8,7 @@ FIXTURE_PATH = f"{os.path.dirname(os.path.abspath(__file__))}/fixtures"
 
 
 class List(TransactionTestCase):
-    fixtures = [f"{FIXTURE_PATH}"'db_task.json']
+    fixtures = [f"{FIXTURE_PATH}/"'db_task.json']
 
     def test_list_without_login(self):
         response = self.client.get(reverse(
