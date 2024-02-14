@@ -14,3 +14,8 @@ lint:
 
 test:
 	poetry run python3 manage.py test
+
+render:
+	poetry install
+	poetry run python manage.py makemigrations
+	poetry run python manage.py migrate
