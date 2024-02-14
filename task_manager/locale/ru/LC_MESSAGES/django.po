@@ -28,7 +28,7 @@ msgstr "Имя"
 
 #: task_manager/mark/views.py:17 task_manager/templates/mark/list.html:5
 msgid "Create mark"
-msgstr "Создать заметку"
+msgstr "Создать метку"
 
 #: task_manager/mark/views.py:18 task_manager/status/views.py:31
 msgid "Create"
@@ -36,7 +36,7 @@ msgstr "Создать"
 
 #: task_manager/mark/views.py:20
 msgid "Mark created successfully"
-msgstr "Заметка успешно создана"
+msgstr "Метка успешно создана"
 
 #: task_manager/mark/views.py:21 task_manager/mark/views.py:33
 #: task_manager/mark/views.py:47 task_manager/mark/views.py:61
@@ -47,7 +47,7 @@ msgstr "Вы не авторизованы! Пожалуйста, выполни
 
 #: task_manager/mark/views.py:28 task_manager/templates/nav.html:18
 msgid "Marks"
-msgstr "Заметки"
+msgstr "Метки"
 
 #: task_manager/mark/views.py:29 task_manager/status/views.py:17
 #: task_manager/users/views.py:18
@@ -60,20 +60,20 @@ msgstr "Дата создания"
 
 #: task_manager/mark/views.py:43
 msgid "Update mark"
-msgstr ""
+msgstr "Обновить метку"
 
 #: task_manager/mark/views.py:44 task_manager/status/views.py:45
 #: task_manager/users/views.py:45
 msgid "Update"
-msgstr "Изменение заметки"
+msgstr "Изменение метки"
 
 #: task_manager/mark/views.py:46
 msgid "Mark updated successfully"
-msgstr "Заметка успешно обновлена"
+msgstr "Метка успешно обновлена"
 
 #: task_manager/mark/views.py:56
 msgid "Remove mark"
-msgstr "Удалить заметку"
+msgstr "Удалить метку"
 
 #: task_manager/mark/views.py:57 task_manager/status/views.py:58
 #: task_manager/users/views.py:60
@@ -87,11 +87,11 @@ msgstr "Вы уверены, что хотите удалить"
 
 #: task_manager/mark/views.py:62
 msgid "Mark can't be deleted - on use now"
-msgstr "Невозможно удалить заметку, потому что она используется"
+msgstr "Невозможно удалить метку, потому что она используется"
 
 #: task_manager/mark/views.py:63
 msgid "Mark was deleted successfully"
-msgstr "Заметка успешно удалена"
+msgstr "Метка успешно удалена"
 
 #: task_manager/status/views.py:16 task_manager/templates/nav.html:15
 msgid "Statuses"
