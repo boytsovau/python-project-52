@@ -37,6 +37,10 @@ Addresses the common web development task of creating data filtering forms. The 
 
 Integrates with error tracking services, such as Rollbar, to collect real-time error information and send alerts via Slack, email, or other channels. This provides a mechanism to identify and address issues in the production environment.
 
+## Deployment
+
+The project is deployed and accessible at https://python-project-52-w0kn.onrender.com/
+
 ## Getting Started
 
 1. **Clone the repository to your local machine:**
@@ -74,6 +78,7 @@ If you'd like to contribute to the project, please follow these steps:
 3. Make your changes and commit them.
 4. Push your changes to your fork.
 5. Submit a pull request.
+
 
 ## Settings
 
