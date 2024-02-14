@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-14 21:28+0000\n"
+"POT-Creation-Date: 2024-02-14 21:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,7 +50,7 @@ msgid "Marks"
 msgstr "Метки"
 
 #: task_manager/mark/views.py:29 task_manager/status/views.py:17
-#: task_manager/users/views.py:18
+#: task_manager/users/views.py:20
 msgid "ID"
 msgstr "ID"
 
@@ -63,7 +63,7 @@ msgid "Update mark"
 msgstr "Обновить метку"
 
 #: task_manager/mark/views.py:44 task_manager/status/views.py:45
-#: task_manager/users/views.py:45
+#: task_manager/users/views.py:46
 msgid "Update"
 msgstr "Изменение метки"
 
@@ -93,11 +93,11 @@ msgstr "Невозможно удалить метку, потому что он
 msgid "Mark was deleted successfully"
 msgstr "Метка успешно удалена"
 
-#: task_manager/settings.py:143
+#: task_manager/settings.py:145
 msgid "Russian"
 msgstr ""
 
-#: task_manager/settings.py:144
+#: task_manager/settings.py:146
 msgid "English"
 msgstr ""
 
@@ -138,10 +138,6 @@ msgstr "Статус успешно удален"
 msgid "Task manager"
 msgstr "Менеджер задач"
 
-#: task_manager/templates/index.html:7
-msgid "It's a study django project"
-msgstr ""
-
 #: task_manager/templates/mark/list.html:19
 #: task_manager/templates/status/list.html:19
 #: task_manager/templates/tasks/detail.html:47
@@ -158,7 +154,7 @@ msgstr "Редактировать"
 msgid "remove"
 msgstr "Удалить"
 
-#: task_manager/templates/nav.html:11 task_manager/users/views.py:17
+#: task_manager/templates/nav.html:11 task_manager/users/views.py:19
 msgid "Users"
 msgstr "Пользователи"
 
@@ -174,7 +170,7 @@ msgstr "Выход"
 msgid "Enter"
 msgstr "Вход"
 
-#: task_manager/templates/nav.html:32 task_manager/users/views.py:30
+#: task_manager/templates/nav.html:32 task_manager/users/views.py:32
 msgid "Register"
 msgstr "Регистрация"
 
@@ -226,39 +222,39 @@ msgstr "Пароли не совпадают"
 msgid "Username already exists"
 msgstr "Имя пользователя уже существует"
 
-#: task_manager/users/views.py:19
+#: task_manager/users/views.py:21
 msgid "username"
 msgstr "Имя пользоватея"
 
-#: task_manager/users/views.py:20
+#: task_manager/users/views.py:22
 msgid "full name"
 msgstr "ФИО"
 
-#: task_manager/users/views.py:21
+#: task_manager/users/views.py:23
 msgid "create at"
 msgstr "Создан"
 
-#: task_manager/users/views.py:31
+#: task_manager/users/views.py:33
 msgid "Register "
 msgstr "Регистрация"
 
-#: task_manager/users/views.py:33
+#: task_manager/users/views.py:35
 msgid "User created successfully"
 msgstr "Пользователь успешно создан"
 
-#: task_manager/users/views.py:44
+#: task_manager/users/views.py:45
 msgid "Edit user"
 msgstr "Редактировать пользователя"
 
-#: task_manager/users/views.py:47
+#: task_manager/users/views.py:48
 msgid "Please login to modify user"
 msgstr "Пожалуйста войдите для редактирования пользователя"
 
-#: task_manager/users/views.py:48
+#: task_manager/users/views.py:49
 msgid "You cannot edit another user"
 msgstr "Вы не можете редатировать другиз пользователей"
 
-#: task_manager/users/views.py:49
+#: task_manager/users/views.py:50
 msgid "User update successfully"
 msgstr "Пользователь успешно обновлен"
 
