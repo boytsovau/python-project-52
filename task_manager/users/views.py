@@ -6,8 +6,10 @@ from django.utils.translation import gettext_lazy as _
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from .forms import UserForm
-from task_manager.mixins import LoginRequiredCustomMixin, \
+from task_manager.mixins import (
+    LoginRequiredCustomMixin,
     DeleteProtectErrorMixin
+)
 
 
 class UserListView(ListView):
@@ -39,7 +41,6 @@ class UserUpdateView(LoginRequiredCustomMixin, UserTestCustomMixin,
     form_class = UserForm
     template_name = 'users/create.html'
     success_url = reverse_lazy('user_list')
-    # login_url = reverse_lazy('user_login')
     extra_context = {
         'header': _('Edit user'),
         'button_title': _('Update'),
@@ -54,7 +55,6 @@ class UserDeleteView(LoginRequiredCustomMixin, UserTestCustomMixin,
     model = User
     template_name = 'users/delete.html'
     success_url = reverse_lazy('user_list')
-    # login_url = reverse_lazy('user_login')
     extra_context = {
         'header': _('Remove user'),
         'button_title': _('Yes, remove'),
