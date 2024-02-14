@@ -33,7 +33,6 @@ class UserLoginView(LoginView):
 
 class UserLogoutView(LogoutView):
 
-    def get(self, request):
-        logout(request)
-        messages.info(request, _('Logged out successfully'))
-        return redirect('/')
+    def dispatch(self, request, *args, **kwargs):
+        messages.info(request, _('You have successfully logged out'))
+        return super().dispatch(request, *args, **kwargs)

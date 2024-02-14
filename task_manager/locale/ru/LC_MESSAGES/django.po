@@ -22,36 +22,36 @@ msgstr ""
 #: mark/forms.py:15 mark/forms.py:20 mark/views.py:30 status/forms.py:15
 #: status/forms.py:20 status/views.py:18
 msgid "Name"
-msgstr ""
+msgstr "Имя"
 
 #: mark/views.py:17 templates/mark/list.html:5
 msgid "Create mark"
-msgstr ""
+msgstr "Создать заметку"
 
 #: mark/views.py:18 status/views.py:31
 msgid "Create"
-msgstr ""
+msgstr "Создать"
 
 #: mark/views.py:20
 msgid "Mark created successfully"
-msgstr ""
+msgstr "Заметка успешно создана"
 
 #: mark/views.py:21 mark/views.py:33 mark/views.py:47 mark/views.py:61
 #: status/views.py:21 status/views.py:34 status/views.py:48 status/views.py:61
 msgid "Please login"
-msgstr ""
+msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
 #: mark/views.py:28 templates/nav.html:18
 msgid "Marks"
-msgstr ""
+msgstr "Заметки"
 
 #: mark/views.py:29 status/views.py:17 users/views.py:18
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: mark/views.py:31 status/views.py:19
 msgid "Created at"
-msgstr ""
+msgstr "Дата создания"
 
 #: mark/views.py:43
 msgid "Update mark"
@@ -59,63 +59,63 @@ msgstr ""
 
 #: mark/views.py:44 status/views.py:45 users/views.py:45
 msgid "Update"
-msgstr ""
+msgstr "Изменение заметки"
 
 #: mark/views.py:46
 msgid "Mark updated successfully"
-msgstr ""
+msgstr "Заметка успешно обновлена"
 
 #: mark/views.py:56
 msgid "Remove mark"
-msgstr ""
+msgstr "Удалить заметку"
 
 #: mark/views.py:57 status/views.py:58 users/views.py:60
 msgid "Yes, remove"
-msgstr ""
+msgstr "Да, удалить"
 
 #: mark/views.py:58 status/views.py:59 users/views.py:61
 msgid "Are you sure delete"
-msgstr ""
+msgstr "Вы уверены, что хотите удалить"
 
 #: mark/views.py:62
 msgid "Mark can't be deleted - on use now"
-msgstr ""
+msgstr "Невозможно удалить заметку, потому что она используется"
 
 #: mark/views.py:63
 msgid "Mark was deleted successfully"
-msgstr ""
+msgstr "Заметка успешно удалена"
 
 #: status/views.py:16 templates/nav.html:15
 msgid "Statuses"
-msgstr ""
+msgstr "Статусы"
 
 #: status/views.py:30 templates/status/list.html:5
 msgid "Create status"
-msgstr ""
+msgstr "Создать статус"
 
 #: status/views.py:33
 msgid "Status created successfully"
-msgstr ""
+msgstr "Статус успешно создан"
 
 #: status/views.py:44
 msgid "Update status"
-msgstr ""
+msgstr "Изменить статус"
 
 #: status/views.py:47
 msgid "Status updated successfully"
-msgstr ""
+msgstr "Статус успешно изменен"
 
 #: status/views.py:57
 msgid "Remove status"
-msgstr ""
+msgstr "Удлить статус"
 
 #: status/views.py:62
 msgid "Status can't be deleted - on use now"
-msgstr ""
+msgstr "Невозможно удалить статус, потому что он используется"
 
 #: status/views.py:63
 msgid "Status was deleted successfully"
-msgstr ""
+msgstr "Статус успешно удален"
 
 #: templates/base.html:9 templates/nav.html:4 views.py:13
 msgid "Task manager"
@@ -163,15 +163,15 @@ msgstr "Создать Задачу"
 
 #: users/forms.py:11 users/forms.py:15
 msgid "First name"
-msgstr ""
+msgstr "Имя"
 
 #: users/forms.py:21 users/forms.py:25
 msgid "Last name"
-msgstr ""
+msgstr "Фамилия"
 
 #: users/forms.py:31 users/forms.py:35
 msgid "Username"
-msgstr ""
+msgstr "Имя пользователя"
 
 #: users/forms.py:36
 msgid "Not an option"
@@ -179,100 +179,100 @@ msgstr ""
 
 #: users/forms.py:44 users/forms.py:59
 msgid "Password is too short"
-msgstr ""
+msgstr "Пароль слишком короткий"
 
 #: users/forms.py:46 users/forms.py:50
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
 #: users/forms.py:51
 msgid "Password must contains at least 3 chars"
-msgstr ""
+msgstr "Пароль содерджит меньше 3 символов"
 
 #: users/forms.py:56 users/forms.py:64
 msgid "Password confirmation"
-msgstr ""
+msgstr "Подтверждение пароля"
 
 #: users/forms.py:65
 msgid "Please, type your password again"
-msgstr ""
+msgstr "Подалуйста, введите пароль еще раз"
 
 #: users/forms.py:82
 msgid "Passwords don't match"
-msgstr ""
+msgstr "Пароли не совпадают"
 
 #: users/forms.py:90
 msgid "Username already exists"
-msgstr ""
+msgstr "Имя пользователя уже существует"
 
 #: users/views.py:19
 msgid "username"
-msgstr ""
+msgstr "Имя пользоватея"
 
 #: users/views.py:20
 msgid "full name"
-msgstr ""
+msgstr "ФИО"
 
 #: users/views.py:21
 msgid "create at"
-msgstr ""
+msgstr "Создан"
 
 #: users/views.py:31
 msgid "Register "
-msgstr ""
+msgstr "Регистрация"
 
 #: users/views.py:33
 msgid "User created successfully"
-msgstr ""
+msgstr "Пользователь успешно создан"
 
 #: users/views.py:44
 msgid "Edit user"
-msgstr ""
+msgstr "Редактировать пользователя"
 
 #: users/views.py:47
 msgid "Please login to modify user"
-msgstr ""
+msgstr "Пожалуйста войдите для редактирования пользователя"
 
 #: users/views.py:48
 msgid "You cannot edit another user"
-msgstr ""
+msgstr "Вы не можете редатировать другиз пользователей"
 
 #: users/views.py:49
 msgid "User update successfully"
-msgstr ""
+msgstr "Пользователь успешно обновлен"
 
 #: users/views.py:59
 msgid "Remove user"
-msgstr ""
+msgstr "Удалить пользователя"
 
 #: users/views.py:63
 msgid "Please login to delete user"
-msgstr ""
+msgstr "Пожалуйста войдите для удаления пользователя"
 
 #: users/views.py:64
 msgid "You cannot delete another user"
-msgstr ""
+msgstr "Вы не можете удалить другого пользователя"
 
 #: users/views.py:65
 msgid "User was successfully deleted"
-msgstr ""
+msgstr "Пользователь успешно удален"
 
 #: users/views.py:66
 msgid "User can't be deleted - on use now"
-msgstr ""
+msgstr "Пользователь не может быть удален, так как используется"
 
 #: views.py:22
 msgid "Entrance"
-msgstr ""
+msgstr "Вход"
 
 #: views.py:26
 msgid "Login successfully"
-msgstr ""
+msgstr "Успешный вход"
 
 #: views.py:30
 msgid "Login Error"
-msgstr ""
+msgstr "Ошибка входа"
 
 #: views.py:38
 msgid "Logged out successfully"
-msgstr ""
+msgstr "Выход успешно выполнен"
