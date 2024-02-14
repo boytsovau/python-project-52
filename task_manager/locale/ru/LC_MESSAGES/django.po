@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-14 21:53+0000\n"
+"POT-Creation-Date: 2024-02-14 22:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,11 +93,11 @@ msgstr "Невозможно удалить метку, потому что он
 msgid "Mark was deleted successfully"
 msgstr "Метка успешно удалена"
 
-#: task_manager/settings.py:145
+#: task_manager/settings.py:144
 msgid "Russian"
 msgstr ""
 
-#: task_manager/settings.py:146
+#: task_manager/settings.py:145
 msgid "English"
 msgstr ""
 
@@ -137,6 +137,10 @@ msgstr "Статус успешно удален"
 #: task_manager/views.py:13
 msgid "Task manager"
 msgstr "Менеджер задач"
+
+#: task_manager/templates/index.html:7
+msgid "Hexlet project"
+msgstr ""
 
 #: task_manager/templates/mark/list.html:19
 #: task_manager/templates/status/list.html:19
