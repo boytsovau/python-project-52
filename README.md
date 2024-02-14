@@ -3,7 +3,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/9ab5fbe5103bee2393c5/maintainability)](https://codeclimate.com/github/boytsovau/python-project-52/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9ab5fbe5103bee2393c5/test_coverage)](https://codeclimate.com/github/boytsovau/python-project-52/test_coverage)
 
-[![Actions Status](https://github.com/boytsovau/python-project-52/workflows/test/badge.svg)](https://github.com/boytsovau/python-project-52/actions)
+[![Actions Status](https://github.com/boytsovau/python-project-52/workflows/Django-test/badge.svg)](https://github.com/boytsovau/python-project-52/actions)
 
 [![Actions Status](https://github.com/boytsovau/python-project-52/workflows/test-cov/badge.svg)](https://github.com/boytsovau/python-project-52/actions)
 
