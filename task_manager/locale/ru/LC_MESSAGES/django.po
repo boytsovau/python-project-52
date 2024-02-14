@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-12 18:34+0000\n"
+"POT-Creation-Date: 2024-02-14 19:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,260 +19,278 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
-#: mark/forms.py:15 mark/forms.py:20 mark/views.py:30 status/forms.py:15
-#: status/forms.py:20 status/views.py:18
+
+#: task_manager/mark/forms.py:15 task_manager/mark/forms.py:20
+#: task_manager/mark/views.py:30 task_manager/status/forms.py:15
+#: task_manager/status/forms.py:20 task_manager/status/views.py:18
 msgid "Name"
 msgstr "Имя"
 
-#: mark/views.py:17 templates/mark/list.html:5
+#: task_manager/mark/views.py:17 task_manager/templates/mark/list.html:5
 msgid "Create mark"
 msgstr "Создать заметку"
 
-#: mark/views.py:18 status/views.py:31
+#: task_manager/mark/views.py:18 task_manager/status/views.py:31
 msgid "Create"
 msgstr "Создать"
 
-#: mark/views.py:20
+#: task_manager/mark/views.py:20
 msgid "Mark created successfully"
 msgstr "Заметка успешно создана"
 
-#: mark/views.py:21 mark/views.py:33 mark/views.py:47 mark/views.py:61
-#: status/views.py:21 status/views.py:34 status/views.py:48 status/views.py:61
+#: task_manager/mark/views.py:21 task_manager/mark/views.py:33
+#: task_manager/mark/views.py:47 task_manager/mark/views.py:61
+#: task_manager/status/views.py:21 task_manager/status/views.py:34
+#: task_manager/status/views.py:48 task_manager/status/views.py:61
 msgid "Please login"
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
-#: mark/views.py:28 templates/nav.html:18
+#: task_manager/mark/views.py:28 task_manager/templates/nav.html:18
 msgid "Marks"
 msgstr "Заметки"
 
-#: mark/views.py:29 status/views.py:17 users/views.py:18
+#: task_manager/mark/views.py:29 task_manager/status/views.py:17
+#: task_manager/users/views.py:18
 msgid "ID"
 msgstr "ID"
 
-#: mark/views.py:31 status/views.py:19
+#: task_manager/mark/views.py:31 task_manager/status/views.py:19
 msgid "Created at"
 msgstr "Дата создания"
 
-#: mark/views.py:43
+#: task_manager/mark/views.py:43
 msgid "Update mark"
 msgstr ""
 
-#: mark/views.py:44 status/views.py:45 users/views.py:45
+#: task_manager/mark/views.py:44 task_manager/status/views.py:45
+#: task_manager/users/views.py:45
 msgid "Update"
 msgstr "Изменение заметки"
 
-#: mark/views.py:46
+#: task_manager/mark/views.py:46
 msgid "Mark updated successfully"
 msgstr "Заметка успешно обновлена"
 
-#: mark/views.py:56
+#: task_manager/mark/views.py:56
 msgid "Remove mark"
 msgstr "Удалить заметку"
 
-#: mark/views.py:57 status/views.py:58 users/views.py:60
+#: task_manager/mark/views.py:57 task_manager/status/views.py:58
+#: task_manager/users/views.py:60
 msgid "Yes, remove"
 msgstr "Да, удалить"
 
-#: mark/views.py:58 status/views.py:59 users/views.py:61
+#: task_manager/mark/views.py:58 task_manager/status/views.py:59
+#: task_manager/users/views.py:61
 msgid "Are you sure delete"
 msgstr "Вы уверены, что хотите удалить"
 
-#: mark/views.py:62
+#: task_manager/mark/views.py:62
 msgid "Mark can't be deleted - on use now"
 msgstr "Невозможно удалить заметку, потому что она используется"
 
-#: mark/views.py:63
+#: task_manager/mark/views.py:63
 msgid "Mark was deleted successfully"
 msgstr "Заметка успешно удалена"
 
-#: status/views.py:16 templates/nav.html:15
+#: task_manager/status/views.py:16 task_manager/templates/nav.html:15
 msgid "Statuses"
 msgstr "Статусы"
 
-#: status/views.py:30 templates/status/list.html:5
+#: task_manager/status/views.py:30 task_manager/templates/status/list.html:5
 msgid "Create status"
 msgstr "Создать статус"
 
-#: status/views.py:33
+#: task_manager/status/views.py:33
 msgid "Status created successfully"
 msgstr "Статус успешно создан"
 
-#: status/views.py:44
+#: task_manager/status/views.py:44
 msgid "Update status"
 msgstr "Изменить статус"
 
-#: status/views.py:47
+#: task_manager/status/views.py:47
 msgid "Status updated successfully"
 msgstr "Статус успешно изменен"
 
-#: status/views.py:57
+#: task_manager/status/views.py:57
 msgid "Remove status"
 msgstr "Удлить статус"
 
-#: status/views.py:62
+#: task_manager/status/views.py:62
 msgid "Status can't be deleted - on use now"
 msgstr "Невозможно удалить статус, потому что он используется"
 
-#: status/views.py:63
+#: task_manager/status/views.py:63
 msgid "Status was deleted successfully"
 msgstr "Статус успешно удален"
 
-#: templates/base.html:9 templates/nav.html:4 views.py:13
+#: task_manager/templates/base.html:9 task_manager/templates/nav.html:4
+#: task_manager/views.py:13
 msgid "Task manager"
 msgstr "Менеджер задач"
 
-#: templates/index.html:7
+#: task_manager/templates/index.html:7
 msgid "It's a study django project"
 msgstr ""
 
-#: templates/mark/list.html:19 templates/status/list.html:19
-#: templates/tasks/detail.html:47 templates/tasks/list.html:31
-#: templates/users/list.html:20
+#: task_manager/templates/mark/list.html:19
+#: task_manager/templates/status/list.html:19
+#: task_manager/templates/tasks/detail.html:47
+#: task_manager/templates/tasks/list.html:31
+#: task_manager/templates/users/list.html:20
 msgid "edit"
 msgstr "Редактировать"
 
-#: templates/mark/list.html:20 templates/status/list.html:20
-#: templates/tasks/detail.html:49 templates/tasks/list.html:33
-#: templates/users/list.html:21
+#: task_manager/templates/mark/list.html:20
+#: task_manager/templates/status/list.html:20
+#: task_manager/templates/tasks/detail.html:49
+#: task_manager/templates/tasks/list.html:33
+#: task_manager/templates/users/list.html:21
 msgid "remove"
 msgstr "Удалить"
 
-#: templates/nav.html:11 users/views.py:17
+#: task_manager/templates/nav.html:11 task_manager/users/views.py:17
 msgid "Users"
 msgstr "Пользователи"
 
-#: templates/nav.html:21
+#: task_manager/templates/nav.html:21
 msgid "Tasks"
 msgstr "Задачи"
 
-#: templates/nav.html:29
+#: task_manager/templates/nav.html:29
 msgid "Logout"
 msgstr "Выход"
 
-#: templates/nav.html:31 views.py:21
+#: task_manager/templates/nav.html:31 task_manager/views.py:21
 msgid "Enter"
 msgstr "Вход"
 
-#: templates/nav.html:32 users/views.py:30
+#: task_manager/templates/nav.html:32 task_manager/users/views.py:30
 msgid "Register"
 msgstr "Регистрация"
 
-#: templates/tasks/list.html:6
+#: task_manager/templates/tasks/list.html:6
 msgid "Create task"
 msgstr "Создать Задачу"
 
-#: users/forms.py:11 users/forms.py:15
+#: task_manager/users/forms.py:11 task_manager/users/forms.py:15
 msgid "First name"
 msgstr "Имя"
 
-#: users/forms.py:21 users/forms.py:25
+#: task_manager/users/forms.py:21 task_manager/users/forms.py:25
 msgid "Last name"
 msgstr "Фамилия"
 
-#: users/forms.py:31 users/forms.py:35
+#: task_manager/users/forms.py:31 task_manager/users/forms.py:35
 msgid "Username"
 msgstr "Имя пользователя"
 
-#: users/forms.py:36
+#: task_manager/users/forms.py:36
 msgid "Not an option"
 msgstr ""
 
-#: users/forms.py:44 users/forms.py:59
+#: task_manager/users/forms.py:44 task_manager/users/forms.py:59
 msgid "Password is too short"
 msgstr "Пароль слишком короткий"
 
-#: users/forms.py:46 users/forms.py:50
+#: task_manager/users/forms.py:46 task_manager/users/forms.py:50
 msgid "Password"
 msgstr "Пароль"
 
-#: users/forms.py:51
+#: task_manager/users/forms.py:51
 msgid "Password must contains at least 3 chars"
 msgstr "Пароль содерджит меньше 3 символов"
 
-#: users/forms.py:56 users/forms.py:64
+#: task_manager/users/forms.py:56 task_manager/users/forms.py:64
 msgid "Password confirmation"
 msgstr "Подтверждение пароля"
 
-#: users/forms.py:65
+#: task_manager/users/forms.py:65
 msgid "Please, type your password again"
 msgstr "Подалуйста, введите пароль еще раз"
 
-#: users/forms.py:82
+#: task_manager/users/forms.py:82
 msgid "Passwords don't match"
 msgstr "Пароли не совпадают"
 
-#: users/forms.py:90
+#: task_manager/users/forms.py:90
 msgid "Username already exists"
 msgstr "Имя пользователя уже существует"
 
-#: users/views.py:19
+#: task_manager/users/views.py:19
 msgid "username"
 msgstr "Имя пользоватея"
 
-#: users/views.py:20
+#: task_manager/users/views.py:20
 msgid "full name"
 msgstr "ФИО"
 
-#: users/views.py:21
+#: task_manager/users/views.py:21
 msgid "create at"
 msgstr "Создан"
 
-#: users/views.py:31
+#: task_manager/users/views.py:31
 msgid "Register "
 msgstr "Регистрация"
 
-#: users/views.py:33
+#: task_manager/users/views.py:33
 msgid "User created successfully"
 msgstr "Пользователь успешно создан"
 
-#: users/views.py:44
+#: task_manager/users/views.py:44
 msgid "Edit user"
 msgstr "Редактировать пользователя"
 
-#: users/views.py:47
+#: task_manager/users/views.py:47
 msgid "Please login to modify user"
 msgstr "Пожалуйста войдите для редактирования пользователя"
 
-#: users/views.py:48
+#: task_manager/users/views.py:48
 msgid "You cannot edit another user"
 msgstr "Вы не можете редатировать другиз пользователей"
 
-#: users/views.py:49
+#: task_manager/users/views.py:49
 msgid "User update successfully"
 msgstr "Пользователь успешно обновлен"
 
-#: users/views.py:59
+#: task_manager/users/views.py:59
 msgid "Remove user"
 msgstr "Удалить пользователя"
 
-#: users/views.py:63
+#: task_manager/users/views.py:63
 msgid "Please login to delete user"
 msgstr "Пожалуйста войдите для удаления пользователя"
 
-#: users/views.py:64
+#: task_manager/users/views.py:64
 msgid "You cannot delete another user"
 msgstr "Вы не можете удалить другого пользователя"
 
-#: users/views.py:65
+#: task_manager/users/views.py:65
 msgid "User was successfully deleted"
 msgstr "Пользователь успешно удален"
 
-#: users/views.py:66
+#: task_manager/users/views.py:66
 msgid "User can't be deleted - on use now"
 msgstr "Пользователь не может быть удален, так как используется"
 
-#: views.py:22
+#: task_manager/views.py:22
 msgid "Entrance"
 msgstr "Вход"
 
-#: views.py:26
+#: task_manager/views.py:26
 msgid "Login successfully"
 msgstr "Успешный вход"
 
-#: views.py:30
+#: task_manager/views.py:30
 msgid "Login Error"
 msgstr "Ошибка входа"
 
-#: views.py:38
-msgid "Logged out successfully"
-msgstr "Выход успешно выполнен"
+#: task_manager/views.py:37
+#, fuzzy
+#| msgid "User was successfully deleted"
+msgid "You have successfully logged out"
+msgstr "Пользователь успешно удален"
+
+#~ msgid "Logged out successfully"
+#~ msgstr "Выход успешно выполнен"
