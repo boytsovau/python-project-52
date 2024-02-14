@@ -1,4 +1,4 @@
-name: test
+name: Django-test
 on: push
 env:
   SECRET_KEY: ${{ secrets.DJANGO_SECRET }}
