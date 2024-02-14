@@ -17,6 +17,7 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 import dj_database_url
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -61,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 
@@ -136,8 +138,10 @@ LOCALE_PATHS = (
     os.path.join(BASE_DIR, "task_manager", "locale"),
 )
 
+
 LANGUAGES = [
     ('ru', _('Russian')),
+    ('en', _('English')),
 ]
 
 
