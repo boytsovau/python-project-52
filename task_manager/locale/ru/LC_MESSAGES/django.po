@@ -139,7 +139,7 @@ msgstr "Удалить"
 
 #: templates/nav.html:11 users/views.py:17
 msgid "Users"
-msgstr "Пользватели"
+msgstr "Пользователи"
 
 #: templates/nav.html:21
 msgid "Tasks"
