@@ -148,7 +148,7 @@ msgstr ""
 #: task_manager/templates/tasks/list.html:31
 #: task_manager/templates/users/list.html:20
 msgid "edit"
-msgstr "Редактировать"
+msgstr "Изменить"
 
 #: task_manager/templates/mark/list.html:20
 #: task_manager/templates/status/list.html:20
