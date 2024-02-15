@@ -156,7 +156,7 @@ msgstr "Изменить"
 #: task_manager/templates/tasks/list.html:33
 #: task_manager/templates/users/list.html:21
 msgid "remove"
-msgstr "Удалить"
+msgstr "Да, удалить"
 
 #: task_manager/templates/nav.html:11 task_manager/users/views.py:19
 msgid "Users"
@@ -256,7 +256,7 @@ msgstr "Пожалуйста войдите для редактирования 
 
 #: task_manager/users/views.py:49
 msgid "You cannot edit another user"
-msgstr "Вы не можете редатировать другиз пользователей"
+msgstr "У вас нет прав для изменения другого пользователя."
 
 #: task_manager/users/views.py:50
 msgid "User update successfully"
@@ -272,7 +272,7 @@ msgstr "Пожалуйста войдите для удаления пользо
 
 #: task_manager/users/views.py:64
 msgid "You cannot delete another user"
-msgstr "Вы не можете удалить другого пользователя"
+msgstr "У вас нет прав для изменения другого пользователя."
 
 #: task_manager/users/views.py:65
 msgid "User was successfully deleted"
