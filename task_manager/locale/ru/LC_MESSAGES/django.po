@@ -65,7 +65,7 @@ msgstr "Обновить метку"
 #: task_manager/mark/views.py:44 task_manager/status/views.py:45
 #: task_manager/users/views.py:46
 msgid "Update"
-msgstr "Изменение метки"
+msgstr "Изменить"
 
 #: task_manager/mark/views.py:46
 msgid "Mark updated successfully"
