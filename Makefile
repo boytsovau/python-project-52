@@ -15,6 +15,10 @@ lint:
 test:
 	poetry run python3 manage.py test
 
+translate:
+	poetry run python manage.py makemessages -l ru
+	poetry run python manage.py compilemessages
+
 render:
 	poetry install
 	poetry run python manage.py makemigrations

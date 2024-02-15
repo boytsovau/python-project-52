@@ -288,7 +288,7 @@ msgstr "Войти"
 
 #: task_manager/views.py:26
 msgid "Login successfully"
-msgstr "Успешный вход"
+msgstr "Вы залогинены"
 
 #: task_manager/views.py:30
 msgid "Login Error"
