@@ -180,7 +180,7 @@ msgstr "Регистрация"
 
 #: task_manager/templates/tasks/list.html:6
 msgid "Create task"
-msgstr "Создать Задачу"
+msgstr "Создать задачу"
 
 #: task_manager/users/forms.py:11 task_manager/users/forms.py:15
 msgid "First name"
