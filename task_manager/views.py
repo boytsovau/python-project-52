@@ -33,5 +33,6 @@ class UserLoginView(LoginView):
 
 class UserLogoutView(LogoutView):
     def dispatch(self, request):
+        logout(request)
         messages.info(request, _('You have successfully logged out'))
         return redirect(reverse_lazy('root', current_app=self.request.resolver_match.namespace))
