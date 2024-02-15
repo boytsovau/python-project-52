@@ -63,7 +63,7 @@ class TaskDeleteView(LoginRequiredCustomMixin, DeleteTaskMixin,
     success_url = reverse_lazy('task_list')
     extra_context = {
         'header': _('Remove task'),
-        'button_title': _('Yes, remove '),
+        'button_title': _('Yes, remove'),
         'message': _('Are you sure delete task '),
     }
     permission_denied_message = _('Please login')
