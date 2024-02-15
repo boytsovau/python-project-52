@@ -60,7 +60,7 @@ msgstr "Дата создания"
 
 #: task_manager/mark/views.py:43
 msgid "Update mark"
-msgstr "Обновить метку"
+msgstr "Изменить метку"
 
 #: task_manager/mark/views.py:44 task_manager/status/views.py:45
 #: task_manager/users/views.py:46
@@ -69,7 +69,7 @@ msgstr "Изменить"
 
 #: task_manager/mark/views.py:46
 msgid "Mark updated successfully"
-msgstr "Метка успешно обновлена"
+msgstr "Метка успешно изменена"
 
 #: task_manager/mark/views.py:56
 msgid "Remove mark"
@@ -260,7 +260,7 @@ msgstr "Вы не можете редатировать другиз польз�
 
 #: task_manager/users/views.py:50
 msgid "User update successfully"
-msgstr "Пользователь успешно обновлен"
+msgstr "Пользователь успешно изменен"
 
 #: task_manager/users/views.py:59
 msgid "Remove user"
