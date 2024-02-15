@@ -295,10 +295,5 @@ msgid "Login Error"
 msgstr "Ошибка входа"
 
 #: task_manager/views.py:36
-#, fuzzy
-#| msgid "User was successfully deleted"
 msgid "You have successfully logged out"
-msgstr "Выход успешно выполнен"
-
-#~ msgid "Logged out successfully"
-#~ msgstr "Выход успешно выполнен"
+msgstr "Вы разлогинены"
