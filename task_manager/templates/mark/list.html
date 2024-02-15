@@ -2,7 +2,7 @@
 {% load i18n %}
 {% block page_content %}
    <h1 class="my-4"> {{ marks }}</h1>
-    <a class="nav-link" href="{% url "mark_add" %}">{% translate "Create mark" %}</a>
+    <a class="btn mt-3 mb-3 btn-primary" href="{% url "mark_add" %}">{% translate "Create mark" %}</a>
     <table class = "table table-striped">
         <tr>
             <th>{{ ID }}</th>

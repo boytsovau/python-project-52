@@ -3,7 +3,7 @@
 {% load django_bootstrap5 %}
 {% block page_content %}
    <h1 class="my-4"> {{ header }}</h1>
-    <a class="nav-link" href="{% url "task_add" %}">{% translate "Create task" %}</a>
+    <a class="btn mt-3 mb-3 btn-primary" href="{% url "task_add" %}">{% translate "Create task" %}</a>
     {% include "tasks/filter.html" %}
     <table class = "table table-striped">
         <tr>
