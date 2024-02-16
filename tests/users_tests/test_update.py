@@ -3,11 +3,7 @@ from django.urls import reverse_lazy as reverse
 from django.test import TransactionTestCase
 import os
 from task_manager.users.models import TaskUser as User
-
-FIXTURE_DIR = os.path.join(
-    os.path.dirname(os.path.realpath(__file__)),
-    '../fixtures'
-)
+from tests import FIXTURE_DIR
 
 FIXTURE_FILE = os.path.join(FIXTURE_DIR, 'user.json')
 TEST_USER = json.load(open(FIXTURE_FILE))

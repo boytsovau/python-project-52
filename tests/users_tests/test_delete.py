@@ -3,12 +3,7 @@ from django.test import TransactionTestCase
 from task_manager.users.models import TaskUser as User
 from task_manager.status.models import Status
 from task_manager.task.models import Task
-import os
-
-FIXTURE_DIR = os.path.join(
-    os.path.dirname(os.path.realpath(__file__)),
-    '../fixtures'
-)
+from tests import FIXTURE_DIR
 
 
 class Delete(TransactionTestCase):

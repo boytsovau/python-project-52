@@ -2,12 +2,7 @@ from task_manager.users.models import TaskUser as User
 from django.urls import reverse_lazy as reverse
 from django.test import TransactionTestCase
 from task_manager.mark.models import Mark
-import os
-
-FIXTURE_DIR = os.path.join(
-    os.path.dirname(os.path.realpath(__file__)),
-    '../fixtures'
-)
+from tests import FIXTURE_DIR
 
 
 class DeleteMarkWithTask(TransactionTestCase):
