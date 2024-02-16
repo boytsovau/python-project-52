@@ -1,6 +1,7 @@
 import json
 from django.urls import reverse_lazy as reverse
 from django.test import TransactionTestCase
+from django.contrib.messages import get_messages
 import os
 from task_manager.users.models import TaskUser as User
 from tests import FIXTURE_DIR
@@ -26,6 +27,10 @@ class Modify(TransactionTestCase):
             self.TEST_USER
         )
         self.assertRedirects(response, reverse('user_login'))
+
+        messages = list(get_messages(response.wsgi_request))
+        self.assertIn('Пожалуйста войдите для редактирования пользователя',
+                      [msg.message for msg in messages])
 
     def test_modify_redirect_after_logging(self):
         user = User.objects.all().first()
@@ -60,3 +65,7 @@ class Modify(TransactionTestCase):
         self.assertRedirects(response, reverse('user_list'))
         user = User.objects.get(pk=user1.id)
         self.assertEqual(user1, user)
+
+        messages = list(get_messages(response.wsgi_request))
+        self.assertIn('У вас нет прав для изменения другого пользователя.',
+                      [msg.message for msg in messages])

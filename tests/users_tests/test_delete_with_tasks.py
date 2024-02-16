@@ -18,7 +18,6 @@ class Remove(TransactionTestCase):
                 kwargs={'pk': user.id}
             )
         )
-        print(response)
         self.assertRedirects(response, reverse('user_list'))
         self.assertEqual(User.objects.all().count(), 2)
 

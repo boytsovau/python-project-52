@@ -3,6 +3,7 @@ from django.test import TransactionTestCase
 from task_manager.users.models import TaskUser as User
 from task_manager.status.models import Status
 from task_manager.task.models import Task
+from django.contrib.messages import get_messages
 from tests import FIXTURE_DIR
 
 
@@ -19,6 +20,10 @@ class Delete(TransactionTestCase):
         self.assertRedirects(response, reverse('user_login'))
         users = User.objects.all().count()
         self.assertEqual(users, 1)
+
+        messages = list(get_messages(response.wsgi_request))
+        self.assertIn('Пожалуйста войдите для удаления пользователя',
+                      [msg.message for msg in messages])
 
     def test_delete_only_himself(self):
         user1 = User.objects.all().first()
@@ -41,6 +46,10 @@ class Delete(TransactionTestCase):
         )
         self.assertEqual(User.objects.all().count(), 1)
         self.assertNotIn(user2, User.objects.all())
+
+        messages = list(get_messages(response.wsgi_request))
+        self.assertIn('У вас нет прав для изменения другого пользователя.',
+                      [msg.message for msg in messages])
 
     def test_delete_with_tasks(self):
         status = Status(name='open status')
