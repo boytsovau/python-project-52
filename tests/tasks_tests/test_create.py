@@ -4,6 +4,7 @@ from django.test import TestCase
 from task_manager.task.models import Status, Task
 from tests import FIXTURE_DIR
 
+
 class Create(TestCase):
     fixtures = [f"{FIXTURE_DIR}/db_task.json"]
 

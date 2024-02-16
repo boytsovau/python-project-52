@@ -5,12 +5,16 @@ import os
 from task_manager.users.models import TaskUser as User
 from tests import FIXTURE_DIR
 
-FIXTURE_FILE = os.path.join(FIXTURE_DIR, 'user.json')
-TEST_USER = json.load(open(FIXTURE_FILE))
+
+def load_fixture_data(filename):
+    fixture_file_path = os.path.join(FIXTURE_DIR, filename)
+    with open(fixture_file_path, 'r') as file:
+        return json.load(file)
 
 
 class Modify(TransactionTestCase):
     fixtures = [f"{FIXTURE_DIR}/db.json"]
+    TEST_USER = load_fixture_data('user.json')
     username = TEST_USER.get('username')
 
     def test_modify_only_logged(self):
@@ -19,7 +23,7 @@ class Modify(TransactionTestCase):
                 'user_update',
                 kwargs={'pk': 1}
             ),
-            TEST_USER
+            self.TEST_USER
         )
         self.assertRedirects(response, reverse('user_login'))
 
@@ -31,13 +35,13 @@ class Modify(TransactionTestCase):
                 'user_update',
                 kwargs={'pk': user.id}
             ),
-            TEST_USER
+            self.TEST_USER
         )
         self.assertRedirects(response, reverse('user_list'))
         user = User.objects.get(pk=user.id)
-        self.assertEqual(user.first_name, TEST_USER.get('first_name'))
-        self.assertEqual(user.last_name, TEST_USER.get('last_name'))
-        self.assertEqual(user.username, TEST_USER.get('username'))
+        self.assertEqual(user.first_name, self.TEST_USER.get('first_name'))
+        self.assertEqual(user.last_name, self.TEST_USER.get('last_name'))
+        self.assertEqual(user.username, self.TEST_USER.get('username'))
 
     def test_modify_only_himself(self):
         self.assertEqual(User.objects.all().count(), 1)
@@ -51,7 +55,7 @@ class Modify(TransactionTestCase):
                 'user_update',
                 kwargs={'pk': user1.id}
             ),
-            TEST_USER
+            self.TEST_USER
         )
         self.assertRedirects(response, reverse('user_list'))
         user = User.objects.get(pk=user1.id)
