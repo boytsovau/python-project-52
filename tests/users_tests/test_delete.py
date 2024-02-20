@@ -4,7 +4,7 @@ from task_manager.users.models import TaskUser as User
 from task_manager.status.models import Status
 from task_manager.task.models import Task
 from django.contrib.messages import get_messages
-from tests import FIXTURE_DIR
+from tests import FIXTURE_DIR, load_fixture_data
 
 
 class Delete(TransactionTestCase):
@@ -31,8 +31,11 @@ class Delete(TransactionTestCase):
 
     def test_delete_only_himself(self):
         user1 = User.objects.all().first()
-        user2 = User.objects.create_user(username='john', password='smith')
-        self.client.login(username='john', password='smith')
+        user2_data = load_fixture_data('user.json')
+        user2 = User.objects.create_user(username=user2_data.get('username'),
+                                         password=user2_data.get('password'))
+        self.client.login(username=user2_data['username'],
+                          password=user2_data['password'])
         response = self.client.post(
             reverse(
                 'user_delete',
