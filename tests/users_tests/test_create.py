@@ -1,10 +1,8 @@
-import json
 from django.urls import reverse_lazy as reverse
 from django.test import TestCase
-import os
 from task_manager.users.models import TaskUser as User
 from django.contrib.messages import get_messages
-from tests import FIXTURE_DIR
+from tests import load_fixture_data
 
 
 class CreateTest(TestCase):
@@ -14,8 +12,7 @@ class CreateTest(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_create_redirect_user(self):
-        fixture_file = os.path.join(FIXTURE_DIR, 'user.json')
-        testuser = json.load(open(fixture_file))
+        testuser = load_fixture_data('user.json')
         response = self.client.post(
             reverse('user_add'),
             testuser

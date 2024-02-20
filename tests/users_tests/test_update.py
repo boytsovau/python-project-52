@@ -1,16 +1,8 @@
-import json
 from django.urls import reverse_lazy as reverse
 from django.test import TransactionTestCase
 from django.contrib.messages import get_messages
-import os
 from task_manager.users.models import TaskUser as User
-from tests import FIXTURE_DIR
-
-
-def load_fixture_data(filename):
-    fixture_file_path = os.path.join(FIXTURE_DIR, filename)
-    with open(fixture_file_path, 'r') as file:
-        return json.load(file)
+from tests import FIXTURE_DIR, load_fixture_data
 
 
 class Modify(TransactionTestCase):
