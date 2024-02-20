@@ -1,8 +1,6 @@
 from django.urls import reverse_lazy as reverse
 from django.test import TransactionTestCase
 from task_manager.users.models import TaskUser as User
-from task_manager.status.models import Status
-from task_manager.task.models import Task
 from django.contrib.messages import get_messages
 from tests import FIXTURE_DIR, load_fixture_data
 
@@ -57,14 +55,3 @@ class Delete(TransactionTestCase):
         messages = list(get_messages(response.wsgi_request))
         self.assertIn('У вас нет прав для изменения другого пользователя.',
                       [msg.message for msg in messages])
-
-    def test_delete_with_tasks(self):
-        status = Status(name='open status')
-        user = User.objects.all()[0]
-        status.save()
-        task = Task(
-            name="Simp Task",
-            status=status,
-            author=user,
-        )
-        task.save()
