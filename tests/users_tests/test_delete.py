@@ -4,7 +4,7 @@ from task_manager.users.models import TaskUser as User
 from task_manager.status.models import Status
 from task_manager.task.models import Task
 from django.contrib.messages import get_messages
-from tests import FIXTURE_DIR, load_fixture_data
+from tests import FIXTURE_DIR
 
 
 class Delete(TransactionTestCase):
@@ -21,6 +21,7 @@ class Delete(TransactionTestCase):
         )
 
         self.assertRedirects(response, reverse('user_login'))
+
         users_count_after = User.objects.all().count()
         self.assertEqual(users_count_after, users_count_before)
 
@@ -29,24 +30,26 @@ class Delete(TransactionTestCase):
                       [msg.message for msg in messages])
 
     def test_delete_only_himself(self):
-        user1_data = load_fixture_data('user1.json')
-        
-        self.client.login(username=user1_data['username'], password=user1_data['password'])
-
-        # Извлекаем данные о пользователе 2 из фикстуры с использованием вашей функции
-        user2_data = load_fixture_data('user2.json')
-
-        # Получаем пользователя 2 из базы данных
-        user2 = User.objects.get(username=user2_data['username'])
-
-        # Проверяем, что пользователь 1 не может удалить пользователя 2
+        user1 = User.objects.all().first()
+        user2 = User.objects.create_user(username='john', password='smith')
+        self.client.login(username='john', password='smith')
         response = self.client.post(
-            reverse('user_delete', kwargs={'pk': user2.id})
+            reverse(
+                'user_delete',
+                kwargs={'pk': user1.id}
+            )
         )
-        self.assertEqual(response.status_code, 403)
-
-        # Пользователь 2 должен остаться в базе данных после попытки удаления
-        self.assertIn(user2, User.objects.all())
+        self.assertRedirects(response, reverse('user_list'))
+        self.assertIn(user1, User.objects.all())
+        self.assertEqual(User.objects.all().count(), 2)
+        self.client.post(
+            reverse(
+                'user_delete',
+                kwargs={'pk': user2.id}
+            )
+        )
+        self.assertEqual(User.objects.all().count(), 1)
+        self.assertNotIn(user2, User.objects.all())
 
         messages = list(get_messages(response.wsgi_request))
         self.assertIn('У вас нет прав для изменения другого пользователя.',
