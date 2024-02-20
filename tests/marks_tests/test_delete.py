@@ -10,7 +10,7 @@ class DeleteMark(TestCase):
     fixtures = [f"{FIXTURE_DIR}/db_mark.json"]
 
     def test_delete_open_without_login(self):
-        response = self.client.get(reverse('mark_delete', kwargs={'pk': 1}), 
+        response = self.client.get(reverse('mark_delete', kwargs={'pk': 1}),
                                    follow=True)
         self.assertEqual(response.status_code, 200)
 

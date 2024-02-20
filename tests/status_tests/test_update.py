@@ -10,7 +10,7 @@ class UpdateStatus(TestCase):
     fixtures = [f"{FIXTURE_DIR}/db_status.json"]
 
     def test_update_open_without_login(self):
-        response = self.client.get(reverse('status_update', kwargs={'pk': 1}), 
+        response = self.client.get(reverse('status_update', kwargs={'pk': 1}),
                                    follow=True)
         self.assertEqual(response.status_code, 200)
 

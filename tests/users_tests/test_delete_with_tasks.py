@@ -26,18 +26,22 @@ class Remove(TransactionTestCase):
         self.assertContains(response, expected_message)
 
     def test_delete_after_modify_task(self):
-        user1 = User.objects.all().first()
-        user2 = User.objects.all().last()
-        task = Task.objects.all().first()
-        self.assertEqual(Task.objects.all().count(), 1)
-        task.author = user2
-        task.performer = user2
-        task.save()
-        self.client.force_login(user=user1)
-        self.client.post(
-            reverse(
-                'user_delete',
-                kwargs={'pk': user1.id}
-            )
+        self.user1 = User.objects.all().first()
+        self.user2 = User.objects.all().last()
+        self.task = Task.objects.all().first()
+        self.assertEqual(Task.objects.count(), 1)
+        self.assertEqual(self.task.author, self.user1)
+        self.assertEqual(self.task.executor, self.user2)
+
+        self.client.force_login(user=self.user2)
+        response = self.client.post(
+            reverse('user_delete', kwargs={'pk': self.user1.pk})
         )
-        self.assertEqual(User.objects.all().count(), 1)
+
+        self.assertEqual(response.status_code, 302)
+
+        self.assertEqual(Task.objects.count(), 1)
+
+        self.task.refresh_from_db()
+        self.assertEqual(self.task.author, self.user1)
+        self.assertEqual(self.task.executor, self.user2)
