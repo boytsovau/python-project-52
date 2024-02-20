@@ -18,7 +18,7 @@ class CreateTest(TestCase):
             testuser
         )
         self.assertRedirects(response, reverse('user_login'))
-        user = User.objects.get(pk=1)
+        user = User.objects.get(username=testuser.get('username'))
         self.assertEqual(user.username, testuser.get('username'))
 
         messages = list(get_messages(response.wsgi_request))

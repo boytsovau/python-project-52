@@ -11,15 +11,18 @@ class Delete(TransactionTestCase):
     fixtures = [f"{FIXTURE_DIR}/db.json"]
 
     def test_delete_without_login(self):
+        users_count_before = User.objects.all().count()
+
         response = self.client.post(
             reverse(
                 'user_delete',
                 kwargs={'pk': 1}
             )
         )
+
         self.assertRedirects(response, reverse('user_login'))
-        users = User.objects.all().count()
-        self.assertEqual(users, 1)
+        users_count_after = User.objects.all().count()
+        self.assertEqual(users_count_after, users_count_before)
 
         messages = list(get_messages(response.wsgi_request))
         self.assertIn('Пожалуйста войдите для удаления пользователя',
