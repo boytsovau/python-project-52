@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy as reverse
 from django.test import TransactionTestCase
+from django.utils.translation import gettext as _
 from task_manager.users.models import TaskUser as User
-from django.contrib.messages import get_messages
 from tests import FIXTURE_DIR, load_fixture_data
 
 
@@ -15,7 +15,8 @@ class Delete(TransactionTestCase):
             reverse(
                 'user_delete',
                 kwargs={'pk': 1}
-            )
+            ),
+            follow=True
         )
 
         self.assertRedirects(response, reverse('user_login'))
@@ -23,9 +24,8 @@ class Delete(TransactionTestCase):
         users_count_after = User.objects.all().count()
         self.assertEqual(users_count_after, users_count_before)
 
-        messages = list(get_messages(response.wsgi_request))
-        self.assertIn('Пожалуйста войдите для удаления пользователя',
-                      [msg.message for msg in messages])
+        expected_message = _('Пожалуйста войдите для удаления пользователя')
+        self.assertContains(response, expected_message)
 
     def test_delete_only_himself(self):
         user1 = User.objects.all().first()
@@ -38,7 +38,8 @@ class Delete(TransactionTestCase):
             reverse(
                 'user_delete',
                 kwargs={'pk': user1.id}
-            )
+            ),
+            follow=True
         )
         self.assertRedirects(response, reverse('user_list'))
         self.assertIn(user1, User.objects.all())
@@ -52,6 +53,5 @@ class Delete(TransactionTestCase):
         self.assertEqual(User.objects.all().count(), 1)
         self.assertNotIn(user2, User.objects.all())
 
-        messages = list(get_messages(response.wsgi_request))
-        self.assertIn('У вас нет прав для изменения другого пользователя.',
-                      [msg.message for msg in messages])
+        expected_message = _('У вас нет прав для изменения другого пользователя.')
+        self.assertContains(response, expected_message)

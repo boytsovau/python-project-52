@@ -1,6 +1,6 @@
 from django.urls import reverse_lazy as reverse
 from django.test import TransactionTestCase
-from django.contrib.messages import get_messages
+from django.utils.translation import gettext as _
 from task_manager.users.models import TaskUser as User
 from tests import FIXTURE_DIR, load_fixture_data
 
@@ -16,13 +16,12 @@ class Modify(TransactionTestCase):
                 'user_update',
                 kwargs={'pk': 1}
             ),
-            self.TEST_USER
+            self.TEST_USER,
+            follow=True
         )
         self.assertRedirects(response, reverse('user_login'))
-
-        messages = list(get_messages(response.wsgi_request))
-        self.assertIn('Пожалуйста войдите для редактирования пользователя',
-                      [msg.message for msg in messages])
+        expected_message = _('Пожалуйста войдите для редактирования пользователя')
+        self.assertContains(response, expected_message)
 
     def test_modify_redirect_after_logging(self):
         user = User.objects.all().first()
@@ -52,12 +51,12 @@ class Modify(TransactionTestCase):
                 'user_update',
                 kwargs={'pk': user1.id}
             ),
-            self.TEST_USER
+            self.TEST_USER,
+            follow=True
         )
         self.assertRedirects(response, reverse('user_list'))
         user = User.objects.get(pk=user1.id)
         self.assertEqual(user1, user)
 
-        messages = list(get_messages(response.wsgi_request))
-        self.assertIn('У вас нет прав для изменения другого пользователя.',
-                      [msg.message for msg in messages])
+        expected_message = _('У вас нет прав для изменения другого пользователя.')
+        self.assertContains(response, expected_message)

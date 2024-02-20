@@ -1,7 +1,7 @@
 from task_manager.users.models import TaskUser as User
 from django.urls import reverse_lazy as reverse
 from django.test import TransactionTestCase
-from django.contrib.messages import get_messages
+from django.utils.translation import gettext as _
 from task_manager.task.models import Task
 from tests import FIXTURE_DIR
 
@@ -10,12 +10,11 @@ class List(TransactionTestCase):
     fixtures = [f"{FIXTURE_DIR}/db_task.json"]
 
     def test_list_without_login(self):
-        response = self.client.get(reverse('task_list'))
-        self.assertEqual(response.status_code, 302)
+        response = self.client.get(reverse('task_list'), follow=True)
+        self.assertEqual(response.status_code, 200)
 
-        messages = list(get_messages(response.wsgi_request))
-        self.assertIn('Вы не авторизованы! Пожалуйста, выполните вход.',
-                      [msg.message for msg in messages])
+        expected_message = _('Вы не авторизованы! Пожалуйста, выполните вход.')
+        self.assertContains(response, expected_message)
 
     def test_list_with_login(self):
         user = User.objects.all().first()
