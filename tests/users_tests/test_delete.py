@@ -29,16 +29,23 @@ class Delete(TransactionTestCase):
                       [msg.message for msg in messages])
 
     def test_delete_only_himself(self):
-        user1_data = load_fixture_data('user.json')
+        user1_data = load_fixture_data('user1.json')
+        
         self.client.login(username=user1_data['username'], password=user1_data['password'])
+
+        # Извлекаем данные о пользователе 2 из фикстуры с использованием вашей функции
         user2_data = load_fixture_data('user2.json')
+
+        # Получаем пользователя 2 из базы данных
         user2 = User.objects.get(username=user2_data['username'])
 
+        # Проверяем, что пользователь 1 не может удалить пользователя 2
         response = self.client.post(
             reverse('user_delete', kwargs={'pk': user2.id})
         )
         self.assertEqual(response.status_code, 403)
 
+        # Пользователь 2 должен остаться в базе данных после попытки удаления
         self.assertIn(user2, User.objects.all())
 
         messages = list(get_messages(response.wsgi_request))
