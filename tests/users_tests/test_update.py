@@ -9,6 +9,7 @@ class Modify(TransactionTestCase):
     fixtures = [f"{FIXTURE_DIR}/db.json"]
     TEST_USER = load_fixture_data('user.json')
     username = TEST_USER.get('username')
+    password = TEST_USER.get('password')
 
     def test_modify_only_logged(self):
         response = self.client.post(
@@ -42,7 +43,8 @@ class Modify(TransactionTestCase):
     def test_modify_only_himself(self):
         self.assertEqual(User.objects.all().count(), 1)
         user1 = User.objects.all().first()
-        testuser = User.objects.create_user(username='john', password='smith')
+        testuser = User.objects.create_user(username=self.username,
+                                            password=self.password)
         self.assertEqual(User.objects.all().count(), 2)
 
         self.client.force_login(user=testuser)
