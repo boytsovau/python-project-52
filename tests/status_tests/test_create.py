@@ -13,7 +13,7 @@ class Create(TestCase):
         response = self.client.get(reverse('status_add'), follow=True)
         self.assertEqual(response.status_code, 200)
 
-        expected_message = _('Вы не авторизованы! Пожалуйста, выполните вход.')
+        expected_message = _('Please login')
         self.assertContains(response, expected_message)
 
     def test_create_task(self):
@@ -33,5 +33,5 @@ class Create(TestCase):
         status_added = statuses2[1]
         self.assertEqual(status_added.name, 'test')
 
-        expected_message = _('Статус успешно создан')
+        expected_message = _('Status created successfully')
         self.assertContains(response, expected_message)

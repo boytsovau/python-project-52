@@ -13,7 +13,7 @@ class UpdateStatus(TestCase):
         response = self.client.get(reverse('mark_update', kwargs={'pk': 1}), follow=True)
         self.assertEqual(response.status_code, 200)
 
-        expected_message = _('Вы не авторизованы! Пожалуйста, выполните вход.')
+        expected_message = _('Please login')
         self.assertContains(response, expected_message)
 
     def test_update_mark(self):
@@ -29,5 +29,5 @@ class UpdateStatus(TestCase):
         mark = Mark.objects.get(pk=1)
         self.assertEqual(mark.name, 'test')
 
-        expected_message = _('Метка успешно изменена')
+        expected_message = _('Mark updated successfully')
         self.assertContains(response, expected_message)

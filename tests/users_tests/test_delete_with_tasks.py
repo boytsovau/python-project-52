@@ -22,7 +22,7 @@ class Remove(TransactionTestCase):
         self.assertRedirects(response, reverse('user_list'))
         self.assertEqual(User.objects.all().count(), 2)
 
-        expected_message = _('Пользователь не может быть удален, так как используется')
+        expected_message = _("User can't be deleted - on use now")
         self.assertContains(response, expected_message)
 
     def test_delete_after_modify_task(self):

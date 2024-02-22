@@ -22,5 +22,5 @@ class CreateTest(TestCase):
         user = User.objects.get(username=testuser.get('username'))
         self.assertEqual(user.username, testuser.get('username'))
 
-        expected_message = _('Пользователь успешно зарегистрирован')
+        expected_message = _('User created successfully')
         self.assertContains(response, expected_message)

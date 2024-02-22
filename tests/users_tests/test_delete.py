@@ -24,7 +24,7 @@ class Delete(TransactionTestCase):
         users_count_after = User.objects.all().count()
         self.assertEqual(users_count_after, users_count_before)
 
-        expected_message = _('Пожалуйста войдите для удаления пользователя')
+        expected_message = _('Please login to delete user')
         self.assertContains(response, expected_message)
 
     def test_delete_only_himself(self):
@@ -53,5 +53,5 @@ class Delete(TransactionTestCase):
         self.assertEqual(User.objects.all().count(), 1)
         self.assertNotIn(user2, User.objects.all())
 
-        expected_message = _('У вас нет прав для изменения другого пользователя.')
+        expected_message = _('You cannot edit another user')
         self.assertContains(response, expected_message)

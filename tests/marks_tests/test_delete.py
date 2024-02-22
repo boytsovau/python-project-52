@@ -14,7 +14,7 @@ class DeleteMark(TestCase):
                                    follow=True)
         self.assertEqual(response.status_code, 200)
 
-        expected_message = _('Вы не авторизованы! Пожалуйста, выполните вход.')
+        expected_message = _('Please login')
         self.assertContains(response, expected_message)
 
     def test_delete_task(self):
@@ -29,5 +29,5 @@ class DeleteMark(TestCase):
         statuses = Mark.objects.all()
         self.assertEqual(len(statuses), 0)
 
-        expected_message = _('Метка успешно удалена')
+        expected_message = _('Mark was deleted successfully')
         self.assertContains(response, expected_message)

@@ -15,7 +15,7 @@ class List(TransactionTestCase):
             follow=True)
         self.assertEqual(response.status_code, 200)
 
-        expected_message = _('Вы не авторизованы! Пожалуйста, выполните вход.')
+        expected_message = _('Please login')
         self.assertContains(response, expected_message)
 
     def test_list_with_login(self):

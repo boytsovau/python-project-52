@@ -14,7 +14,7 @@ class DeleteTask(TransactionTestCase):
                                    follow=True)
         self.assertEqual(response.status_code, 200)
 
-        expected_message = _('Вы не авторизованы! Пожалуйста, выполните вход.')
+        expected_message = _('Please login')
         self.assertContains(response, expected_message)
 
     def test_delete_task(self):
@@ -27,5 +27,5 @@ class DeleteTask(TransactionTestCase):
         )
         self.assertEqual(Task.objects.all().count(), 0)
 
-        expected_message = _('Задача успешно удалена')
+        expected_message = _('Task was successfully deleted')
         self.assertContains(response, expected_message)

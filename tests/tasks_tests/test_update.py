@@ -14,7 +14,7 @@ class UpdateTask(TransactionTestCase):
                                    follow=True)
         self.assertEqual(response.status_code, 200)
 
-        expected_message = _('Вы не авторизованы! Пожалуйста, выполните вход.')
+        expected_message = _('Please login')
         self.assertContains(response, expected_message)
 
     def test_update_task(self):
@@ -41,5 +41,5 @@ class UpdateTask(TransactionTestCase):
         self.assertEqual(task.name, task2['name'])
         self.assertEqual(task.executor_id, task2['executor'])
 
-        expected_message = _('Задача успешно изменена')
+        expected_message = _('Task updated successfully')
         self.assertContains(response, expected_message)

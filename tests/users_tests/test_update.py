@@ -20,7 +20,7 @@ class Modify(TransactionTestCase):
             follow=True
         )
         self.assertRedirects(response, reverse('user_login'))
-        expected_message = _('Пожалуйста войдите для редактирования пользователя')
+        expected_message = _('Please login to modify user')
         self.assertContains(response, expected_message)
 
     def test_modify_redirect_after_logging(self):
@@ -58,5 +58,5 @@ class Modify(TransactionTestCase):
         user = User.objects.get(pk=user1.id)
         self.assertEqual(user1, user)
 
-        expected_message = _('У вас нет прав для изменения другого пользователя.')
+        expected_message = _('You cannot edit another user')
         self.assertContains(response, expected_message)
