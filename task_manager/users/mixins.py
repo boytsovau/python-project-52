@@ -12,8 +12,7 @@ class UserTestCustomMixin(UserPassesTestMixin):
     def test_func(self):
         user_instance = User.objects.get(pk=self.request.user.id)
         obj = self.get_object()
-        object_instance = User.objects.get(pk=obj.id)
-        if user_instance == object_instance:
+        if user_instance.id == obj.id:
             return True
         return False
 
