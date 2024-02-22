@@ -33,8 +33,7 @@ class UserLoginView(LoginView):
 
 class UserLogoutView(LogoutView):
     next_page = reverse_lazy('root')
-    message = _('You have successfully logged out')
 
     def dispatch(self, request, *args, **kwargs):
-        messages.info(request, message=self.message)
+        messages.info(request, _('You have successfully logged out'))
         return super().dispatch(request, *args, **kwargs)

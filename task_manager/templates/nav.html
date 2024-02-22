@@ -26,7 +26,12 @@
     <ul class="navbar-nav mr-auto">
             {% if request.user.is_authenticated %}
                 <li class = "nav-item active"><a class="nav-link active">{{ request.user.username }}</a></li>
-                <li class = "nav-item active"><a class="btn btn-secondary logout-link" href="{% url 'user_logout' %}">{% translate "Logout" %}</a></li>
+                <li class="nav-item active">
+                    <form action="{% url 'user_logout' %}" method="post">
+                        {% csrf_token %}
+                        <input class="btn nav-link" type="submit" value="{% translate 'Logout' %}">
+                    </form>
+                </li>
             {% else %}
                 <li class = "nav-item active"><a class="nav-link active" href="{% url 'user_login' %}">{% translate "Enter" %}</a></li>
                 <li class = "nav-item active"><a class="nav-link active" href="{% url 'user_add' %}">{% translate "Register" %}</a></li>
