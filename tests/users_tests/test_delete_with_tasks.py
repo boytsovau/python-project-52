@@ -35,13 +35,16 @@ class Remove(TransactionTestCase):
 
         self.client.force_login(user=self.user2)
         response = self.client.post(
-            reverse('user_delete', kwargs={'pk': self.user1.pk})
+            reverse('user_delete', kwargs={'pk': self.user1.pk}),
+            follow=True
         )
 
-        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_code, 200)
 
         self.assertEqual(Task.objects.count(), 1)
 
         self.task.refresh_from_db()
         self.assertEqual(self.task.author, self.user1)
         self.assertEqual(self.task.executor, self.user2)
+        expected_message = _("You cannot edit another user")
+        self.assertContains(response, expected_message)
