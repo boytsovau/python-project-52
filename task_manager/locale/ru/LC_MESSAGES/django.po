@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-22 13:37+0000\n"
+"POT-Creation-Date: 2024-02-22 13:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -197,7 +197,7 @@ msgstr "Пароль"
 #, fuzzy
 #| msgid "Password must contains at least 3 chars"
 msgid "Your password must contain at least 8 characters."
-msgstr "Ваш пароль должен содержать как минимум 8 символов."
+msgstr "Ваш пароль должен содержать как минимум 8 символов"
 
 #: task_manager/users/forms.py:18
 msgid "Password confirmation"
@@ -221,7 +221,9 @@ msgstr "Имя пользователя"
 
 #: task_manager/users/forms.py:37
 msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
-msgstr "Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./+/-/_."
+msgstr ""
+"Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./"
+"+/-/_."
 
 #: task_manager/users/views.py:21
 msgid "username"
