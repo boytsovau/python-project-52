@@ -225,7 +225,7 @@ msgstr "Обязательное поле. Не более 150 символов.
 
 #: task_manager/users/views.py:21
 msgid "username"
-msgstr "Имя пользоватея"
+msgstr "Имя пользователя"
 
 #: task_manager/users/views.py:22
 msgid "full name"
