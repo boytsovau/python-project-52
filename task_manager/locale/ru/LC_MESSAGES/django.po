@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-15 12:12+0000\n"
+"POT-Creation-Date: 2024-02-22 13:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgstr "Создать метку"
 msgid "Create"
 msgstr "Создать"
 
-#: task_manager/mark/views.py:20
+#: task_manager/mark/views.py:20 tests/marks_tests/test_create.py:32
 msgid "Mark created successfully"
 msgstr "Метка успешно создана"
 
@@ -42,6 +42,13 @@ msgstr "Метка успешно создана"
 #: task_manager/mark/views.py:47 task_manager/mark/views.py:61
 #: task_manager/status/views.py:21 task_manager/status/views.py:34
 #: task_manager/status/views.py:48 task_manager/status/views.py:61
+#: tests/marks_tests/test_create.py:16 tests/marks_tests/test_delete.py:17
+#: tests/marks_tests/test_list.py:15 tests/marks_tests/test_update.py:16
+#: tests/status_tests/test_create.py:16 tests/status_tests/test_delete.py:17
+#: tests/status_tests/test_list.py:15 tests/status_tests/test_update.py:17
+#: tests/tasks_tests/test_DetailView.py:18 tests/tasks_tests/test_create.py:16
+#: tests/tasks_tests/test_delete.py:17 tests/tasks_tests/test_list.py:16
+#: tests/tasks_tests/test_update.py:20
 msgid "Please login"
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
@@ -67,7 +74,7 @@ msgstr "Изменить метку"
 msgid "Update"
 msgstr "Изменить"
 
-#: task_manager/mark/views.py:46
+#: task_manager/mark/views.py:46 tests/marks_tests/test_update.py:32
 msgid "Mark updated successfully"
 msgstr "Метка успешно изменена"
 
@@ -89,15 +96,15 @@ msgstr "Вы уверены, что хотите удалить"
 msgid "Mark can't be deleted - on use now"
 msgstr "Невозможно удалить метку, потому что она используется"
 
-#: task_manager/mark/views.py:63
+#: task_manager/mark/views.py:63 tests/marks_tests/test_delete.py:32
 msgid "Mark was deleted successfully"
 msgstr "Метка успешно удалена"
 
-#: task_manager/settings.py:144
+#: task_manager/settings.py:145
 msgid "Russian"
 msgstr ""
 
-#: task_manager/settings.py:145
+#: task_manager/settings.py:146
 msgid "English"
 msgstr ""
 
@@ -109,7 +116,7 @@ msgstr "Статусы"
 msgid "Create status"
 msgstr "Создать статус"
 
-#: task_manager/status/views.py:33
+#: task_manager/status/views.py:33 tests/status_tests/test_create.py:36
 msgid "Status created successfully"
 msgstr "Статус успешно создан"
 
@@ -134,7 +141,7 @@ msgid "Status was deleted successfully"
 msgstr "Статус успешно удален"
 
 #: task_manager/templates/base.html:9 task_manager/templates/nav.html:4
-#: task_manager/views.py:13
+#: task_manager/views.py:11
 msgid "Task manager"
 msgstr "Менеджер задач"
 
@@ -166,15 +173,15 @@ msgstr "Пользователи"
 msgid "Tasks"
 msgstr "Задачи"
 
-#: task_manager/templates/nav.html:29
+#: task_manager/templates/nav.html:32
 msgid "Logout"
 msgstr "Выход"
 
-#: task_manager/templates/nav.html:31 task_manager/views.py:21
+#: task_manager/templates/nav.html:36 task_manager/views.py:19
 msgid "Enter"
 msgstr "Вход"
 
-#: task_manager/templates/nav.html:32 task_manager/users/views.py:32
+#: task_manager/templates/nav.html:37 task_manager/users/views.py:32
 msgid "Register"
 msgstr "Регистрация"
 
@@ -182,49 +189,39 @@ msgstr "Регистрация"
 msgid "Create task"
 msgstr "Создать задачу"
 
-#: task_manager/users/forms.py:11 task_manager/users/forms.py:15
-msgid "First name"
-msgstr "Имя"
-
-#: task_manager/users/forms.py:21 task_manager/users/forms.py:25
-msgid "Last name"
-msgstr "Фамилия"
-
-#: task_manager/users/forms.py:31 task_manager/users/forms.py:35
-msgid "Username"
-msgstr "Имя пользователя"
-
-#: task_manager/users/forms.py:36
-msgid "Not an option"
-msgstr ""
-
-#: task_manager/users/forms.py:44 task_manager/users/forms.py:59
-msgid "Password is too short"
-msgstr "Пароль слишком короткий"
-
-#: task_manager/users/forms.py:46 task_manager/users/forms.py:50
+#: task_manager/users/forms.py:10
 msgid "Password"
 msgstr "Пароль"
 
-#: task_manager/users/forms.py:51
-msgid "Password must contains at least 3 chars"
-msgstr "Пароль содерджит меньше 3 символов"
+#: task_manager/users/forms.py:13
+#, fuzzy
+#| msgid "Password must contains at least 3 chars"
+msgid "Your password must contain at least 8 characters."
+msgstr "Ваш пароль должен содержать как минимум 8 символов."
 
-#: task_manager/users/forms.py:56 task_manager/users/forms.py:64
+#: task_manager/users/forms.py:18
 msgid "Password confirmation"
 msgstr "Подтверждение пароля"
 
-#: task_manager/users/forms.py:65
-msgid "Please, type your password again"
-msgstr "Подалуйста, введите пароль еще раз"
+#: task_manager/users/forms.py:21 task_manager/users/forms.py:40
+msgid "Enter the same password as before, for verification."
+msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."
 
-#: task_manager/users/forms.py:82
-msgid "Passwords don't match"
-msgstr "Пароли не совпадают"
+#: task_manager/users/forms.py:31
+msgid "First name"
+msgstr "Имя"
 
-#: task_manager/users/forms.py:90
-msgid "Username already exists"
-msgstr "Имя пользователя уже существует"
+#: task_manager/users/forms.py:32
+msgid "Last name"
+msgstr "Фамилия"
+
+#: task_manager/users/forms.py:33
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: task_manager/users/forms.py:37
+msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+msgstr "Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./+/-/_."
 
 #: task_manager/users/views.py:21
 msgid "username"
@@ -242,7 +239,7 @@ msgstr "Создан"
 msgid "Register "
 msgstr "Зарегистрировать"
 
-#: task_manager/users/views.py:35
+#: task_manager/users/views.py:35 tests/users_tests/test_create.py:25
 msgid "User created successfully"
 msgstr "Пользователь успешно зарегистрирован"
 
@@ -250,11 +247,13 @@ msgstr "Пользователь успешно зарегистрирован"
 msgid "Edit user"
 msgstr "Редактировать пользователя"
 
-#: task_manager/users/views.py:48
+#: task_manager/users/views.py:48 tests/users_tests/test_update.py:24
 msgid "Please login to modify user"
 msgstr "Пожалуйста войдите для редактирования пользователя"
 
-#: task_manager/users/views.py:49
+#: task_manager/users/views.py:49 tests/users_tests/test_delete.py:57
+#: tests/users_tests/test_delete_with_tasks.py:49
+#: tests/users_tests/test_update.py:63
 msgid "You cannot edit another user"
 msgstr "У вас нет прав для изменения другого пользователя."
 
@@ -266,7 +265,7 @@ msgstr "Пользователь успешно изменен"
 msgid "Remove user"
 msgstr "Удалить пользователя"
 
-#: task_manager/users/views.py:63
+#: task_manager/users/views.py:63 tests/users_tests/test_delete.py:27
 msgid "Please login to delete user"
 msgstr "Пожалуйста войдите для удаления пользователя"
 
@@ -279,21 +278,52 @@ msgid "User was successfully deleted"
 msgstr "Пользователь успешно удален"
 
 #: task_manager/users/views.py:66
+#: tests/users_tests/test_delete_with_tasks.py:25
 msgid "User can't be deleted - on use now"
 msgstr "Пользователь не может быть удален, так как используется"
 
-#: task_manager/views.py:22
+#: task_manager/views.py:20
 msgid "Entrance"
 msgstr "Войти"
 
-#: task_manager/views.py:26
+#: task_manager/views.py:24
 msgid "Login successfully"
 msgstr "Вы залогинены"
 
-#: task_manager/views.py:30
+#: task_manager/views.py:28
 msgid "Login Error"
 msgstr "Ошибка входа"
 
-#: task_manager/views.py:37
+#: task_manager/views.py:36
 msgid "You have successfully logged out"
 msgstr "Вы разлогинены"
+
+#: tests/tasks_tests/test_create.py:37
+#, fuzzy
+#| msgid "Mark created successfully"
+msgid "Task created successfully"
+msgstr "Метка успешно создана"
+
+#: tests/tasks_tests/test_delete.py:30
+#, fuzzy
+#| msgid "User was successfully deleted"
+msgid "Task was successfully deleted"
+msgstr "Пользователь успешно удален"
+
+#: tests/tasks_tests/test_update.py:48
+#, fuzzy
+#| msgid "Mark updated successfully"
+msgid "Task updated successfully"
+msgstr "Метка успешно изменена"
+
+#~ msgid "Password is too short"
+#~ msgstr "Пароль слишком короткий"
+
+#~ msgid "Please, type your password again"
+#~ msgstr "Подалуйста, введите пароль еще раз"
+
+#~ msgid "Passwords don't match"
+#~ msgstr "Пароли не совпадают"
+
+#~ msgid "Username already exists"
+#~ msgstr "Имя пользователя уже существует"

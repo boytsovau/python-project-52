@@ -1,99 +1,42 @@
 from django import forms
 from django.utils.translation import gettext_lazy as _
 from .models import TaskUser as User
-from django.core.validators import MinLengthValidator
+from django.contrib.auth.forms import UserCreationForm
 
 
-class UserForm(forms.ModelForm):
-    password_min_len = 3
-
-    first_name = forms.CharField(
-        label=_('First name'),
-        widget=forms.TextInput(
-            attrs={
-                'class': 'form-control',
-                'placeholder': _('First name'),
-            }
-        )
-    )
-
-    last_name = forms.CharField(
-        label=_('Last name'),
-        widget=forms.TextInput(
-            attrs={
-                'class': 'form-control',
-                'placeholder': _('Last name'),
-            }
-        )
-    )
-
-    username = forms.CharField(
-        label=_('Username'),
-        widget=forms.TextInput(
-            attrs={
-                'class': 'form-control',
-                'placeholder': _('Username'),
-                'title': _('Not an option')
-            }
-        )
-    )
+class UserForm(UserCreationForm):
 
     password1 = forms.CharField(
-        validators=[
-            MinLengthValidator(password_min_len,
-                               _("Password is too short")),
-        ],
         label=_('Password'),
-        widget=forms.PasswordInput(
-            attrs={
-                'class': 'form-control',
-                'placeholder': _('Password'),
-                'title': _('Password must contains at least 3 chars')
-            }
-        )
+        strip=False,
+        widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
+        help_text=_('Your password must contain '
+                    'at least 8 characters.'),
     )
+
     password2 = forms.CharField(
         label=_('Password confirmation'),
-        validators=[
-            MinLengthValidator(password_min_len,
-                               _("Password is too short")),
-        ],
-        widget=forms.PasswordInput(
-            attrs={
-                'class': 'form-control',
-                'placeholder': _('Password confirmation'),
-                'title': _('Please, type your password again'),
-            }
-        )
+        strip=False,
+        widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
+        help_text=_('Enter the same password as before, '
+                    'for verification.'),
     )
 
-    class Meta:
+    class Meta(UserCreationForm.Meta):
         model = User
-        fields = ('first_name',
-                  'last_name',
-                  'username',
-                  )
+        fields = ['first_name', 'last_name', 'username',
+                  'password1', 'password2']
 
-    def clean_password2(self):
-        password1 = self.cleaned_data.get("password1")
-        password2 = self.cleaned_data.get("password2")
-        if password1 and password2 and password1 != password2:
-            raise forms.ValidationError(
-                _("Passwords don't match"), code='invalid')
-        return password2
+        labels = {
+            'first_name': _('First name'),
+            'last_name': _('Last name'),
+            'username': _('Username'),
+        }
 
-    def clean_username(self):
-        username = self.cleaned_data.get('username')
-        if username and User.objects.filter(
-                username=username).exists():
-            raise forms.ValidationError(
-                _('Username already exists'),
-                code='invalid')
-        return username
+        help_texts = {
+            'username': _('Required. 150 characters or fewer. '
+                          'Letters, digits and @/./+/-/_ only.'),
 
-    def save(self, commit=True):
-        user = super().save(commit=False)
-        user.set_password(self.cleaned_data["password1"])
-        if commit:
-            user.save()
-        return user
+            'password2': _('Enter the same password as before, '
+                           'for verification.')
+        }

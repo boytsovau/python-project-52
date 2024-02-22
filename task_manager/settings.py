@@ -137,7 +137,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LOGIN_REDIRECT_URL = 'root'
 
 LOCALE_PATHS = (
-    os.path.join(BASE_DIR, "locale"),
+    os.path.join(BASE_DIR, "task_manager/locale"),
 )
 
 
