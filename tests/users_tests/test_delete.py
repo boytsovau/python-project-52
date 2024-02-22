@@ -34,6 +34,7 @@ class Delete(TransactionTestCase):
                                          password=user2_data.get('password'))
         self.client.login(username=user2_data['username'],
                           password=user2_data['password'])
+
         response = self.client.post(
             reverse(
                 'user_delete',
@@ -43,14 +44,14 @@ class Delete(TransactionTestCase):
         )
         self.assertRedirects(response, reverse('user_list'))
         self.assertIn(user1, User.objects.all())
-        self.assertEqual(User.objects.all().count(), 2)
+        initial_user_count = User.objects.all().count()
         self.client.post(
             reverse(
                 'user_delete',
                 kwargs={'pk': user2.id}
             )
         )
-        self.assertEqual(User.objects.all().count(), 1)
+        self.assertEqual(User.objects.all().count(), initial_user_count - 1)
         self.assertNotIn(user2, User.objects.all())
 
         expected_message = _('You cannot edit another user')
