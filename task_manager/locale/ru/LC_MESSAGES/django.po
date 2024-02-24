@@ -191,7 +191,7 @@ msgstr "Вход"
 
 #: task_manager/templates/nav.html:37 task_manager/users/views.py:33
 msgid "Register"
-msgstr "Зарегистрировать"
+msgstr "Регистрация"
 
 #: task_manager/templates/tasks/list.html:6
 msgid "Create task"
@@ -199,7 +199,7 @@ msgstr "Создать задачу"
 
 #: task_manager/templates/users/create.html:10
 msgid "Submit"
-msgstr ""
+msgstr "Зарегистрировать"
 
 #: task_manager/users/forms.py:13
 msgid "First name"
