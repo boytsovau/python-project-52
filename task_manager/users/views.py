@@ -53,7 +53,7 @@ class UserUpdateView(LoginRequiredCustomMixin, UserTestCustomMixin,
 class UserDeleteView(PermissionDeniedMessageMixin, UserTestCustomMixin,
                      DeleteProtectErrorMixin, DeleteView):
     model = User
-    template_name = 'users/delete.html'
+    template_name = 'delete.html'
     success_url = reverse_lazy('user_list')
     extra_context = {
         'header': _('Remove user'),

@@ -59,7 +59,7 @@ class TaskUpdateView(LoginRequiredCustomMixin, SuccessMessageMixin,
 class TaskDeleteView(LoginRequiredCustomMixin, DeleteTaskMixin,
                      SuccessMessageMixin, DeleteView):
     model = Task
-    template_name = 'tasks/delete.html'
+    template_name = 'delete.html'
     success_url = reverse_lazy('task_list')
     extra_context = {
         'header': _('Remove task'),

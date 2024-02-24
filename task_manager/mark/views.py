@@ -50,7 +50,7 @@ class MarkUpdateView(LoginRequiredCustomMixin, SuccessMessageMixin,
 class MarkDeleteView(LoginRequiredCustomMixin, DeleteProtectErrorMixin,
                      DeleteView):
     model = Mark
-    template_name = "mark/delete.html"
+    template_name = "delete.html"
     success_url = reverse_lazy('mark_list')
     extra_context = {
         'header': _('Remove mark'),

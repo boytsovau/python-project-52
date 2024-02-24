@@ -51,7 +51,7 @@ class StatusUpdateView(LoginRequiredCustomMixin, SuccessMessageMixin,
 class StatusDeleteView(LoginRequiredCustomMixin, DeleteProtectErrorMixin,
                        DeleteView):
     model = Status
-    template_name = "status/delete.html"
+    template_name = "delete.html"
     success_url = reverse_lazy('status_list')
     extra_context = {
         'header': _('Remove status'),
