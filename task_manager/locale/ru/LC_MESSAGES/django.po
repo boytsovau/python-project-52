@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-22 13:58+0000\n"
+"POT-Creation-Date: 2024-02-24 09:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgstr "Создать метку"
 msgid "Create"
 msgstr "Создать"
 
-#: task_manager/mark/views.py:20 tests/marks_tests/test_create.py:32
+#: task_manager/mark/views.py:20 tests/marks_tests/test_create.py:36
 msgid "Mark created successfully"
 msgstr "Метка успешно создана"
 
@@ -42,13 +42,13 @@ msgstr "Метка успешно создана"
 #: task_manager/mark/views.py:47 task_manager/mark/views.py:61
 #: task_manager/status/views.py:21 task_manager/status/views.py:34
 #: task_manager/status/views.py:48 task_manager/status/views.py:61
-#: tests/marks_tests/test_create.py:16 tests/marks_tests/test_delete.py:17
+#: tests/marks_tests/test_create.py:20 tests/marks_tests/test_delete.py:17
 #: tests/marks_tests/test_list.py:15 tests/marks_tests/test_update.py:16
-#: tests/status_tests/test_create.py:16 tests/status_tests/test_delete.py:17
+#: tests/status_tests/test_create.py:20 tests/status_tests/test_delete.py:17
 #: tests/status_tests/test_list.py:15 tests/status_tests/test_update.py:17
-#: tests/tasks_tests/test_DetailView.py:18 tests/tasks_tests/test_create.py:16
+#: tests/tasks_tests/test_DetailView.py:18 tests/tasks_tests/test_create.py:20
 #: tests/tasks_tests/test_delete.py:17 tests/tasks_tests/test_list.py:16
-#: tests/tasks_tests/test_update.py:20
+#: tests/tasks_tests/test_update.py:22
 msgid "Please login"
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
@@ -116,7 +116,7 @@ msgstr "Статусы"
 msgid "Create status"
 msgstr "Создать статус"
 
-#: task_manager/status/views.py:33 tests/status_tests/test_create.py:36
+#: task_manager/status/views.py:33 tests/status_tests/test_create.py:37
 msgid "Status created successfully"
 msgstr "Статус успешно создан"
 
@@ -189,37 +189,19 @@ msgstr "Регистрация"
 msgid "Create task"
 msgstr "Создать задачу"
 
-#: task_manager/users/forms.py:10
-msgid "Password"
-msgstr "Пароль"
-
 #: task_manager/users/forms.py:13
-#, fuzzy
-#| msgid "Password must contains at least 3 chars"
-msgid "Your password must contain at least 8 characters."
-msgstr "Ваш пароль должен содержать как минимум 8 символов"
-
-#: task_manager/users/forms.py:18
-msgid "Password confirmation"
-msgstr "Подтверждение пароля"
-
-#: task_manager/users/forms.py:21 task_manager/users/forms.py:40
-msgid "Enter the same password as before, for verification."
-msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."
-
-#: task_manager/users/forms.py:31
 msgid "First name"
 msgstr "Имя"
 
-#: task_manager/users/forms.py:32
+#: task_manager/users/forms.py:14
 msgid "Last name"
 msgstr "Фамилия"
 
-#: task_manager/users/forms.py:33
+#: task_manager/users/forms.py:15
 msgid "Username"
 msgstr "Имя пользователя"
 
-#: task_manager/users/forms.py:37
+#: task_manager/users/forms.py:19
 msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
 msgstr ""
 "Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./"
@@ -249,13 +231,13 @@ msgstr "Пользователь успешно зарегистрирован"
 msgid "Edit user"
 msgstr "Редактировать пользователя"
 
-#: task_manager/users/views.py:48 tests/users_tests/test_update.py:24
+#: task_manager/users/views.py:48 tests/users_tests/test_update.py:26
 msgid "Please login to modify user"
 msgstr "Пожалуйста войдите для редактирования пользователя"
 
 #: task_manager/users/views.py:49 tests/users_tests/test_delete.py:57
 #: tests/users_tests/test_delete_with_tasks.py:49
-#: tests/users_tests/test_update.py:63
+#: tests/users_tests/test_update.py:65
 msgid "You cannot edit another user"
 msgstr "У вас нет прав для изменения другого пользователя."
 
@@ -300,7 +282,7 @@ msgstr "Ошибка входа"
 msgid "You have successfully logged out"
 msgstr "Вы разлогинены"
 
-#: tests/tasks_tests/test_create.py:37
+#: tests/tasks_tests/test_create.py:41
 #, fuzzy
 #| msgid "Mark created successfully"
 msgid "Task created successfully"
@@ -312,11 +294,25 @@ msgstr "Метка успешно создана"
 msgid "Task was successfully deleted"
 msgstr "Пользователь успешно удален"
 
-#: tests/tasks_tests/test_update.py:48
+#: tests/tasks_tests/test_update.py:50
 #, fuzzy
 #| msgid "Mark updated successfully"
 msgid "Task updated successfully"
 msgstr "Метка успешно изменена"
+
+#~ msgid "Password"
+#~ msgstr "Пароль"
+
+#, fuzzy
+#~| msgid "Password must contains at least 3 chars"
+#~ msgid "Your password must contain at least 8 characters."
+#~ msgstr "Ваш пароль должен содержать как минимум 8 символов"
+
+#~ msgid "Password confirmation"
+#~ msgstr "Подтверждение пароля"
+
+#~ msgid "Enter the same password as before, for verification."
+#~ msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."
 
 #~ msgid "Password is too short"
 #~ msgstr "Пароль слишком короткий"

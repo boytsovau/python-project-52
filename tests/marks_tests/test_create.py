@@ -28,7 +28,7 @@ class Create(TestCase):
         initial_marks_count = Mark.objects.all().count()
         response = self.client.post(
             reverse('mark_add'),
-            {'name':  self.mark_name},
+            {'name': self.mark_name},
             follow=True
         )
         self.assertEqual(Mark.objects.all().count(), initial_marks_count + 1)
