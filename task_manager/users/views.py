@@ -8,7 +8,8 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from .forms import UserForm
 from task_manager.mixins import (
     LoginRequiredCustomMixin,
-    DeleteProtectErrorMixin
+    DeleteProtectErrorMixin,
+    PermissionDeniedMessageMixin
 )
 
 
@@ -45,12 +46,11 @@ class UserUpdateView(LoginRequiredCustomMixin, UserTestCustomMixin,
         'header': _('Edit user'),
         'button_title': _('Update'),
     }
-    permission_denied_message = _('Please login to modify user')
     modify_error_message = _('You cannot edit another user')
     success_message = _('User update successfully')
 
 
-class UserDeleteView(LoginRequiredCustomMixin, UserTestCustomMixin,
+class UserDeleteView(PermissionDeniedMessageMixin, UserTestCustomMixin,
                      DeleteProtectErrorMixin, DeleteView):
     model = User
     template_name = 'users/delete.html'
@@ -60,7 +60,6 @@ class UserDeleteView(LoginRequiredCustomMixin, UserTestCustomMixin,
         'button_title': _('Yes, remove'),
         'message': _('Are you sure delete'),
     }
-    permission_denied_message = _('Please login to delete user')
     modify_error_message = _('You cannot delete another user')
     success_message = _('User was successfully deleted')
     protected_error_message = _('User can\'t be deleted - on use now')

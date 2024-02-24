@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-24 09:51+0000\n"
+"POT-Creation-Date: 2024-02-24 10:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,7 +57,7 @@ msgid "Marks"
 msgstr "Метки"
 
 #: task_manager/mark/views.py:29 task_manager/status/views.py:17
-#: task_manager/users/views.py:20
+#: task_manager/users/views.py:21
 msgid "ID"
 msgstr "ID"
 
@@ -70,7 +70,7 @@ msgid "Update mark"
 msgstr "Изменить метку"
 
 #: task_manager/mark/views.py:44 task_manager/status/views.py:45
-#: task_manager/users/views.py:46
+#: task_manager/users/views.py:47
 msgid "Update"
 msgstr "Изменить"
 
@@ -99,6 +99,15 @@ msgstr "Невозможно удалить метку, потому что он
 #: task_manager/mark/views.py:63 tests/marks_tests/test_delete.py:32
 msgid "Mark was deleted successfully"
 msgstr "Метка успешно удалена"
+
+#: task_manager/mixins.py:11 tests/users_tests/test_update.py:26
+msgid "Please login to modify user"
+msgstr "Пожалуйста войдите для редактирования пользователя"
+
+#: task_manager/mixins.py:36 task_manager/users/views.py:63
+#: tests/users_tests/test_delete.py:27
+msgid "Please login to delete user"
+msgstr "Пожалуйста войдите для удаления пользователя"
 
 #: task_manager/settings.py:145
 msgid "Russian"
@@ -165,7 +174,7 @@ msgstr "Изменить"
 msgid "remove"
 msgstr "Удалить"
 
-#: task_manager/templates/nav.html:11 task_manager/users/views.py:19
+#: task_manager/templates/nav.html:11 task_manager/users/views.py:20
 msgid "Users"
 msgstr "Пользователи"
 
@@ -181,7 +190,7 @@ msgstr "Выход"
 msgid "Enter"
 msgstr "Вход"
 
-#: task_manager/templates/nav.html:37 task_manager/users/views.py:32
+#: task_manager/templates/nav.html:37 task_manager/users/views.py:33
 msgid "Register"
 msgstr "Регистрация"
 
@@ -207,33 +216,29 @@ msgstr ""
 "Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./"
 "+/-/_."
 
-#: task_manager/users/views.py:21
+#: task_manager/users/views.py:22
 msgid "username"
 msgstr "Имя пользователя"
 
-#: task_manager/users/views.py:22
+#: task_manager/users/views.py:23
 msgid "full name"
 msgstr "Полное имя"
 
-#: task_manager/users/views.py:23
+#: task_manager/users/views.py:24
 msgid "create at"
 msgstr "Создан"
 
-#: task_manager/users/views.py:33
+#: task_manager/users/views.py:34
 msgid "Register "
 msgstr "Зарегистрировать"
 
-#: task_manager/users/views.py:35 tests/users_tests/test_create.py:25
+#: task_manager/users/views.py:36 tests/users_tests/test_create.py:25
 msgid "User created successfully"
 msgstr "Пользователь успешно зарегистрирован"
 
-#: task_manager/users/views.py:45
+#: task_manager/users/views.py:46
 msgid "Edit user"
 msgstr "Редактировать пользователя"
-
-#: task_manager/users/views.py:48 tests/users_tests/test_update.py:26
-msgid "Please login to modify user"
-msgstr "Пожалуйста войдите для редактирования пользователя"
 
 #: task_manager/users/views.py:49 tests/users_tests/test_delete.py:57
 #: tests/users_tests/test_delete_with_tasks.py:49
@@ -248,10 +253,6 @@ msgstr "Пользователь успешно изменен"
 #: task_manager/users/views.py:59
 msgid "Remove user"
 msgstr "Удалить пользователя"
-
-#: task_manager/users/views.py:63 tests/users_tests/test_delete.py:27
-msgid "Please login to delete user"
-msgstr "Пожалуйста войдите для удаления пользователя"
 
 #: task_manager/users/views.py:64
 msgid "You cannot delete another user"
