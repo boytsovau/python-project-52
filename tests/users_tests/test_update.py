@@ -7,9 +7,11 @@ from tests import FIXTURE_DIR, load_fixture_data
 
 class Modify(TransactionTestCase):
     fixtures = [f"{FIXTURE_DIR}/db.json"]
-    TEST_USER = load_fixture_data('user.json')
-    username = TEST_USER.get('username')
-    password = TEST_USER.get('password')
+
+    def setUp(self):
+        self.TEST_USER = load_fixture_data('user.json')
+        self.username = self.TEST_USER.get('username')
+        self.password = self.TEST_USER.get('password')
 
     def test_modify_only_logged(self):
         response = self.client.post(

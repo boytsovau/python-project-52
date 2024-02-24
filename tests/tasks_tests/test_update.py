@@ -8,9 +8,11 @@ from tests import FIXTURE_DIR, load_fixture_data
 
 class UpdateTask(TransactionTestCase):
     fixtures = [f"{FIXTURE_DIR}/db_task.json"]
-    TEST_USER = load_fixture_data('user.json')
-    username = TEST_USER.get('username')
-    password = TEST_USER.get('password')
+
+    def setUp(self):
+        self.TEST_USER = load_fixture_data('user.json')
+        self.username = self.TEST_USER.get('username')
+        self.password = self.TEST_USER.get('password')
 
     def test_update_open_without_login(self):
         response = self.client.get(reverse('task_update', kwargs={'pk': 1}),
