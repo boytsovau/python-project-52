@@ -4,18 +4,9 @@ from .models import Mark
 
 
 class MarkForm(forms.ModelForm):
-
     class Meta:
         model = Mark
         fields = ['name']
-        widgets = {
-            'name': forms.TextInput(
-                attrs={
-                    'class': 'form-control',
-                    'placeholder': _('Name')
-                }
-            ),
-        }
         labels = {
             'name': _('Name'),
         }
